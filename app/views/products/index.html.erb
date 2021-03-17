@@ -35,4 +35,7 @@
   <% else %>
     <%= link_to 'Sign In', new_admin_session_path %>
   <% end %>
+  <div class="col-6">
+    <%= paginate @products %>
+  </div>
 </div>

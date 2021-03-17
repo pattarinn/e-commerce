@@ -664,3 +664,525 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.3ms | Allocations: 5888)
 
 
+Started GET "/" for 127.0.0.1 at 2021-03-17 22:04:43 +0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 20.7ms | Allocations: 12041)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.8ms | Allocations: 23058)
+Completed 200 OK in 73ms (Views: 52.3ms | ActiveRecord: 2.3ms | Allocations: 26546)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-17 22:04:48 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1779)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 8607)
+Completed 200 OK in 50ms (Views: 17.1ms | ActiveRecord: 0.4ms | Allocations: 9042)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-17 22:10:21 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  [1m[36mAdmin Load (1.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 2150)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 9230)
+Completed 200 OK in 42ms (Views: 38.4ms | ActiveRecord: 1.9ms | Allocations: 10500)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-17 22:11:51 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2135)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 45.4ms | Allocations: 9224)
+Completed 200 OK in 50ms (Views: 47.6ms | ActiveRecord: 0.3ms | Allocations: 10479)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-17 22:12:10 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2150)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 45.6ms | Allocations: 9230)
+Completed 200 OK in 57ms (Views: 54.0ms | ActiveRecord: 0.3ms | Allocations: 10499)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-17 22:14:44 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2139)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.2ms | Allocations: 9229)
+Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.4ms | Allocations: 10491)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-17 22:15:11 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2134)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 9212)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.4ms | Allocations: 10466)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-17 22:15:36 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2139)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 9228)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.3ms | Allocations: 10490)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-17 22:15:57 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 2143)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 70.3ms | Allocations: 9230)
+Completed 200 OK in 75ms (Views: 72.7ms | ActiveRecord: 0.7ms | Allocations: 10485)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-17 22:16:25 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:16
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:23
+  Rendered products/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2150)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 9230)
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 1.1ms | Allocations: 10490)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2021-03-17 22:16:29 +0700
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 57.3ms | Allocations: 6193)
+  Rendered products/new.html.erb within layouts/application (Duration: 60.0ms | Allocations: 6557)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 75.4ms | Allocations: 14061)
+Completed 200 OK in 78ms (Views: 76.1ms | ActiveRecord: 0.0ms | Allocations: 14644)
+
+
+Started POST "/products" for 127.0.0.1 at 2021-03-17 22:17:05 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"bed", "description"=>"smooth as silk", "stock"=>"1", "price"=>"9999"}, "commit"=>"Create Product"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:23:in `block in create'
+  [1m[36mProduct Create (3.2ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "stock", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "bed"], ["description", "smooth as silk"], ["stock", 1], ["price", 9999], ["created_at", "2021-03-17 15:17:05.266931"], ["updated_at", "2021-03-17 15:17:05.266931"]]
+  ↳ app/controllers/products_controller.rb:23:in `block in create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:23:in `block in create'
+Redirected to http://127.0.0.1:3000/products/2
+Completed 302 Found in 24ms (ActiveRecord: 5.8ms | Allocations: 2844)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2021-03-17 22:17:05 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 323)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 7146)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.3ms | Allocations: 8380)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-17 22:17:07 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:16
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:23
+  Rendered products/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1870)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 9473)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.4ms | Allocations: 9903)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-03-17 22:18:34 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 106)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 7731)
+Completed 200 OK in 21ms (Views: 18.0ms | ActiveRecord: 0.2ms | Allocations: 8714)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-17 22:23:55 +0700
+Processing by ProductsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 13ms (Allocations: 7574)
+
+
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `page' for #<Product::ActiveRecord_Relation:0x00007fcf97f41578>):
+  
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/" for 127.0.0.1 at 2021-03-17 22:24:52 +0700
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:16
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:23
+  Rendered products/index.html.erb within layouts/application (Duration: 49.7ms | Allocations: 11741)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 78.1ms | Allocations: 23256)
+Completed 200 OK in 106ms (Views: 80.9ms | ActiveRecord: 2.2ms | Allocations: 26878)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-17 22:24:54 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:16
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:23
+  Rendered products/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1902)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 8717)
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.3ms | Allocations: 9219)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2021-03-17 22:24:57 +0700
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 25.8ms | Allocations: 5301)
+  Rendered products/new.html.erb within layouts/application (Duration: 27.4ms | Allocations: 5667)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 44.7ms | Allocations: 12482)
+Completed 200 OK in 47ms (Views: 45.8ms | ActiveRecord: 0.0ms | Allocations: 13066)
+
+
+Started POST "/products" for 127.0.0.1 at 2021-03-17 22:25:06 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"test", "description"=>"t", "stock"=>"1", "price"=>"0"}, "commit"=>"Create Product"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `block in create'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "stock", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "test"], ["description", "t"], ["stock", 1], ["price", 0], ["created_at", "2021-03-17 15:25:06.437193"], ["updated_at", "2021-03-17 15:25:06.437193"]]
+  ↳ app/controllers/products_controller.rb:24:in `block in create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `block in create'
+Redirected to http://127.0.0.1:3000/products/3
+Completed 302 Found in 10ms (ActiveRecord: 2.7ms | Allocations: 2837)
+
+
+Started GET "/products/3" for 127.0.0.1 at 2021-03-17 22:25:06 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 327)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 7154)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.3ms | Allocations: 8390)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-17 22:25:07 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:16
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:23
+  Rendered products/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2016)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 9627)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.6ms | Allocations: 10143)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2021-03-17 22:25:09 +0700
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 4.3ms | Allocations: 1060)
+  Rendered products/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1178)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 8775)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.0ms | Allocations: 9212)
+
+
+Started POST "/products" for 127.0.0.1 at 2021-03-17 22:25:26 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"food", "description"=>"rotten", "stock"=>"1", "price"=>"1"}, "commit"=>"Create Product"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `block in create'
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "stock", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "food"], ["description", "rotten"], ["stock", 1], ["price", 1], ["created_at", "2021-03-17 15:25:26.940238"], ["updated_at", "2021-03-17 15:25:26.940238"]]
+  ↳ app/controllers/products_controller.rb:24:in `block in create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `block in create'
+Redirected to http://127.0.0.1:3000/products/4
+Completed 302 Found in 16ms (ActiveRecord: 2.5ms | Allocations: 2558)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2021-03-17 22:25:26 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.9ms | Allocations: 6930)
+Completed 200 OK in 40ms (Views: 36.4ms | ActiveRecord: 0.2ms | Allocations: 7917)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-17 22:25:28 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:16
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:23
+  Rendered products/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2118)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 9735)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.7ms | Allocations: 10242)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2021-03-17 22:25:30 +0700
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.7ms | Allocations: 1058)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1175)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 8758)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms | Allocations: 9195)
+
+
+Started POST "/products" for 127.0.0.1 at 2021-03-17 22:25:43 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"tomato", "description"=>"rotten tomato", "stock"=>"1", "price"=>"1"}, "commit"=>"Create Product"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `block in create'
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "stock", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "tomato"], ["description", "rotten tomato"], ["stock", 1], ["price", 1], ["created_at", "2021-03-17 15:25:43.620005"], ["updated_at", "2021-03-17 15:25:43.620005"]]
+  ↳ app/controllers/products_controller.rb:24:in `block in create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `block in create'
+Redirected to http://127.0.0.1:3000/products/5
+Completed 302 Found in 15ms (ActiveRecord: 2.2ms | Allocations: 2560)
+
+
+Started GET "/products/5" for 127.0.0.1 at 2021-03-17 22:25:43 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 6923)
+Completed 200 OK in 18ms (Views: 13.1ms | ActiveRecord: 0.5ms | Allocations: 7909)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-17 22:25:44 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:16
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:23
+  Rendered products/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2217)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 9827)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.5ms | Allocations: 10334)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2021-03-17 22:25:45 +0700
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.2ms | Allocations: 1058)
+  Rendered products/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1175)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 8778)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 9215)
+
+
+Started POST "/products" for 127.0.0.1 at 2021-03-17 22:26:02 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"sixth product", "description"=>"6", "stock"=>"6", "price"=>"6"}, "commit"=>"Create Product"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `block in create'
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "stock", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "sixth product"], ["description", "6"], ["stock", 6], ["price", 6], ["created_at", "2021-03-17 15:26:02.791529"], ["updated_at", "2021-03-17 15:26:02.791529"]]
+  ↳ app/controllers/products_controller.rb:24:in `block in create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `block in create'
+Redirected to http://127.0.0.1:3000/products/6
+Completed 302 Found in 10ms (ActiveRecord: 2.3ms | Allocations: 2554)
+
+
+Started GET "/products/6" for 127.0.0.1 at 2021-03-17 22:26:02 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 6923)
+Completed 200 OK in 19ms (Views: 15.5ms | ActiveRecord: 0.2ms | Allocations: 7909)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-17 22:26:03 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:16
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:23
+  Rendered products/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2217)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 9831)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.5ms | Allocations: 10337)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-17 22:27:47 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:16
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:23
+  Rendered products/index.html.erb within layouts/application (Duration: 23.1ms | Allocations: 6133)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 6213)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.4ms | Allocations: 7617)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for nil:NilClass):
+    36:     <%= link_to 'Sign In', new_admin_session_path %>
+    37:   <% end %>
+    38:   <div class="col-6">
+    39:     <%= paginate @product %>
+    40:   </div>
+    41: </div>
+  
+app/views/products/index.html.erb:39
+Started GET "/products" for 127.0.0.1 at 2021-03-17 22:27:52 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:16
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:39
+  Rendered products/index.html.erb within layouts/application (Duration: 27.8ms | Allocations: 7861)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 54.3ms | Allocations: 15078)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.5ms | Allocations: 16641)
+
+
+Started GET "/products?page=2" for 127.0.0.1 at 2021-03-17 22:27:55 +0700
+Processing by ProductsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  ↳ app/views/products/index.html.erb:16
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:23
+  Rendered products/index.html.erb within layouts/application (Duration: 19.8ms | Allocations: 4054)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.9ms | Allocations: 11691)
+Completed 200 OK in 46ms (Views: 42.4ms | ActiveRecord: 0.5ms | Allocations: 12198)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-17 22:28:00 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:16
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:39
+  Rendered products/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 4276)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 11874)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.9ms | Allocations: 12389)
+
+
