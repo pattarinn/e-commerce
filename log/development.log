@@ -246,3 +246,421 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.2ms | Allocations: 5611)
 
 
+Started GET "/" for 127.0.0.1 at 2021-03-17 17:08:18 +0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 19.8ms | Allocations: 6092)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.9ms | Allocations: 14091)
+Completed 200 OK in 86ms (Views: 59.4ms | ActiveRecord: 1.2ms | Allocations: 17435)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-17 17:08:36 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/products/index.html.erb:17
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 5509)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 9196)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 1.2ms | Allocations: 10080)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-17 17:11:04 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1204)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 5065)
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.9ms | Allocations: 6330)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-03-17 17:11:06 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 23.8ms | Allocations: 5490)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 5570)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms | Allocations: 6085)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Title:</strong>
+    5:   <%= @product.title %>
+    6: </p>
+    7: 
+    8: <p>
+  
+app/views/products/show.html.erb:5
+Started GET "/" for 127.0.0.1 at 2021-03-17 17:11:25 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 976)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 4792)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.2ms | Allocations: 5315)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-03-17 17:11:30 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1389)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1471)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1855)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Title:</strong>
+    5:   <%= @product.title %>
+    6: </p>
+    7: 
+    8: <p>
+  
+app/views/products/show.html.erb:5
+Started GET "/products/1" for 127.0.0.1 at 2021-03-17 17:13:01 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/products_controller.rb:8:in `show'
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 119)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 3783)
+Completed 200 OK in 32ms (Views: 15.3ms | ActiveRecord: 2.5ms | Allocations: 10183)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-17 17:13:04 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 927)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 5391)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.2ms | Allocations: 5817)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-03-17 17:13:06 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 106)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 4562)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.5ms | Allocations: 5557)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2021-03-17 17:13:07 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 3.0ms | Allocations: 1930)
+  Rendered products/edit.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2295)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2404)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 3495)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <%= form_with(model: product) do |form| %>
+    2:   <% if product.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+    5: 
+  
+app/views/products/_form.html.erb:2
+app/views/products/_form.html.erb:1
+app/views/products/edit.html.erb:3
+Started GET "/products/1/edit" for 127.0.0.1 at 2021-03-17 17:13:48 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.1ms | Allocations: 1538)
+  Rendered products/edit.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1639)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1721)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2101)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <%= form_with(model: product) do |form| %>
+    2:   <% if product.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+    5: 
+  
+app/views/products/_form.html.erb:2
+app/views/products/_form.html.erb:1
+app/views/products/edit.html.erb:3
+Started GET "/products/1/edit" for 127.0.0.1 at 2021-03-17 17:13:49 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/products_controller.rb:16:in `edit'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:16:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 12.8ms | Allocations: 3860)
+  Rendered products/edit.html.erb within layouts/application (Duration: 13.2ms | Allocations: 4005)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 7666)
+Completed 200 OK in 26ms (Views: 18.2ms | ActiveRecord: 0.9ms | Allocations: 13649)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-03-17 17:13:55 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 109)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3790)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.2ms | Allocations: 4768)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-17 17:13:56 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 873)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 5337)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.3ms | Allocations: 5763)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-17 17:15:19 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1192)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 5052)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.1ms | Allocations: 6309)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-17 17:15:20 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 854)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 4535)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 4956)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-17 17:16:28 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1244)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 5104)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.2ms | Allocations: 6361)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2021-03-17 17:16:30 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 633)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.7ms | Allocations: 3387)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 7076)
+Completed 200 OK in 27ms (Views: 18.2ms | ActiveRecord: 0.6ms | Allocations: 13640)
+
+
+Started GET "/admins/sign_up" for 127.0.0.1 at 2021-03-17 17:16:31 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 243)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 147)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 17.6ms | Allocations: 1908)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.4ms | Allocations: 6282)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms | Allocations: 7559)
+
+
+Started POST "/admins" for 127.0.0.1 at 2021-03-17 17:16:43 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@m.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin@m.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (1.6ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@m.com"], ["encrypted_password", "$2a$12$3aNxGOqDT89cK6PIqldsIug0K7oLDqjpxUN79T4vCUtbwWnQseyVm"], ["created_at", "2021-03-17 10:16:43.963405"], ["updated_at", "2021-03-17 10:16:43.963405"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 236ms (ActiveRecord: 4.3ms | Allocations: 8301)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-17 17:16:43 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 15.2ms | Allocations: 5323)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 5405)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms | Allocations: 5811)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `destroy_admin_session' for #<ActionView::Base:0x007f88fc030278>
+Did you mean?  destroy_admin_session_url
+               destroy_admin_session_path):
+    33: <br>
+    34: <% if admin_signed_in? %>
+    35:   <%= link_to 'New Product', new_product_path %>
+    36:   <%= link_to 'Sign Out', destroy_admin_session, method: :delete %>
+    37: <% else %>
+    38:   <%= link_to 'Sign In', new_admin_session_path %>
+    39: <% end %>
+  
+app/views/products/index.html.erb:36
+Started GET "/" for 127.0.0.1 at 2021-03-17 17:16:59 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 2136)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 6001)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.3ms | Allocations: 7270)
+
+
+Started DELETE "/admins/sign_out" for 127.0.0.1 at 2021-03-17 17:17:06 +0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.2ms | Allocations: 4209)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-17 17:17:06 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 875)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4563)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 4989)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-03-17 17:17:08 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 4783)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.2ms | Allocations: 5910)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2021-03-17 17:17:12 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 537)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1841)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 6351)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.0ms | Allocations: 7922)
+
+
+Started GET "/admins/sign_up" for 127.0.0.1 at 2021-03-17 17:17:14 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 829)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 104)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2358)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 6223)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 7372)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2021-03-17 17:17:15 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 153)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1037)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 5441)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 6064)
+
+
+Started POST "/admins/sign_in" for 127.0.0.1 at 2021-03-17 17:17:21 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@m.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "admin@m.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 220ms (ActiveRecord: 0.2ms | Allocations: 3598)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-17 17:17:21 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1768)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 5457)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.3ms | Allocations: 5888)
+
+
