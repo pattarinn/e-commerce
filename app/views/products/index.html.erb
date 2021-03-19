@@ -13,18 +13,18 @@
     </thead>
 
     <tbody>
-    <% @products.each do |p| %>
+    <% @products.each do |product| %>
       <tr>
-        <td><%= p.title %></td>
-        <td><%= p.description %></td>
-        <td><%= p.stock %></td>
-        <td><%= p.price %></td>
+        <td><%= product.title %></td>
+        <td><%= product.description %></td>
+        <td><%= product.stock %></td>
+        <td><%= product.price %></td>
         <td>
-          <a class="fas fa-eye" href=<%= product_path(p) %>></a>
+          <a class="fas fa-eye" href=<%= product_path(product) %>></a>
         <% if admin_signed_in? %>
-            <a class="fas fa-pen" href=<%= edit_product_path(p) %>></a>
+            <a class="fas fa-pen" href=<%= edit_product_path(product) %>></a>
 <!--            <a class="fas fa-trash" href=""></a>-->
-            <%= link_to 'Delete', p, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %>
             </td>
         <% end %>
       </tr>
