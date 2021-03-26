@@ -29,7 +29,8 @@
             </div>
           <% end %>
         </td>
-<!--                <td><%#= product.category&.map(&:name)&.join(',').presence || 'NA' %></td>-->
+<!--                <td><%#= product.categories&.map(&:name)&.join(',').presence || 'NA' %></td>-->
+
         <td><%= product.stock %></td>
         <td><%= product.price %></td>
         <td>
@@ -53,9 +54,9 @@
   <div class="col-6">
     <%= paginate @products %>
   </div>
-<!--  <div class="col-12">-->
-<!--    <div class="float-right">-->
-      <%#= link_to 'New Category', new_category_path %>
-<!--    </div>-->
-<!--  </div>-->
+  <div class="col-12">
+    <div class="float-right">
+      <%= link_to 'New Category', new_category_path %>
+    </div>
+  </div>
 </div>

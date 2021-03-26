@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin!, except: [:show, :index]
 
   def index
     @products = Product.all
@@ -61,6 +62,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:title, :description, :stock, :price)
+      params.require(:product).permit(:title, :description, :stock, :price, category_ids: [])
     end
 end

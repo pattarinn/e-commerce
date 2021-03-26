@@ -31,16 +31,16 @@
     <%= form.number_field :price %>
   </div>
 
-<!--  <div class="field">-->
-    <%#= form.label :category %>
-    <%#= form.text_field :category %>
-<!--  </div>-->
   <div>
     <label for="category">Choose category</label>
-    <select name="category" id="category">
-      <option value="c1">c1</option>
-      <option value="c2">c2</option>
-    </select>
+    <%= form.collection_check_boxes :category_ids, Category.all, :id, :name %>
+
+    <!--    <select name="category" id="category">-->
+    <%# Category.all.each do |c| %>
+    <!--       <option value="<%#= c.id %>"><%#= c.name %></option>-->
+    <%#= form.check_box(c.name, :value => c.id) %>
+    <%# end %>
+    <!--    </select>-->
   </div>
 
   <div class="actions">
