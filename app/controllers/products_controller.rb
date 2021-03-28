@@ -85,7 +85,7 @@ class ProductsController < ApplicationController
     end
 
     def generate_csv(products)
-      products.map { |p| [p.title, p.description, p.stock, p.price, p.categories].join(',') }.join("\n")
+      products.map { |p| [p.title, p.description, p.stock, p.price].join(',') }.join("\n")
     end
 
 end
