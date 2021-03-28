@@ -4,6 +4,11 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @products = @products.page(params[:page]).per(5)
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data generate_csv(Product.all), file_name: 'article.csv' }
+    end
   end
 
   def show
@@ -54,6 +59,20 @@ class ProductsController < ApplicationController
     end
   end
 
+  def csv_upload
+    data = params[:csv_file].read.split("\n")
+    data.each do |line|
+      attr = line.split(",").map(&:strip)
+      p = Product.create title: attr[0], description: attr[1], stock: attr[2], price: attr[3]
+      unless Category.exists?(name: attr[4])
+        Category.create name: attr[4]
+      end
+      c = Category.where(name: attr[4])
+      p.categories << c
+    end
+    redirect_to action: :index
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
@@ -64,4 +83,9 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:title, :description, :stock, :price, category_ids: [])
     end
+
+    def generate_csv(products)
+      products.map { |p| [p.title, p.description, p.stock, p.price, p.categories].join(',') }.join("\n")
+    end
+
 end
