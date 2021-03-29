@@ -45,7 +45,9 @@
 
   <div>
 
+    <%#= form.select(:status, options_for_select(Product.statuses.map {|k, v| [k.humanize.capitalize, v]}))%>
     <%= form.select(:status, options_for_select(Product.statuses.keys))%>
+
 
 <!--    <label for="status">Choose status</label>-->
 <!--    <select name="status" id="status">-->

@@ -81,7 +81,7 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:title, :description, :stock, :price, category_ids: [])
+      params.require(:product).permit(:title, :description, :stock, :price, category_ids: [], :status => Product.statuses.keys)
     end
 
     def generate_csv(products)
