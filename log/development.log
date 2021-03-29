@@ -20359,3 +20359,2193 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 49ms (Views: 45.4ms | ActiveRecord: 2.2ms | Allocations: 17876)
 
 
+Started GET "/products" for 127.0.0.1 at 2021-03-29 22:26:04 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 99.0ms | Allocations: 13417)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 192.2ms | Allocations: 20504)
+Completed 200 OK in 218ms (Views: 209.7ms | ActiveRecord: 2.8ms | Allocations: 21963)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2021-03-29 22:26:08 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 8.5ms | Allocations: 4167)
+  Rendered products/edit.html.erb within layouts/application (Duration: 14.3ms | Allocations: 4725)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 11540)
+Completed 200 OK in 31ms (Views: 23.2ms | ActiveRecord: 0.9ms | Allocations: 14283)
+
+
+Started PATCH "/products/1" for 127.0.0.1 at 2021-03-29 22:26:10 +0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"bear", "description"=>"from northern forest", "stock"=>"2", "price"=>"100000", "category_ids"=>["", "2"], "status"=>"1"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:41:in `update'
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:43:in `block in update'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/products_controller.rb:43:in `block in update'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:43:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:43:in `block in update'
+Redirected to http://127.0.0.1:3000/products/1
+Completed 302 Found in 15ms (ActiveRecord: 0.7ms | Allocations: 5442)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-03-29 22:26:10 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 315)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 7131)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 8252)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 22:26:11 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 27.7ms | Allocations: 10522)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.4ms | Allocations: 17335)
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 1.6ms | Allocations: 17872)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2021-03-29 22:26:15 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 11.6ms | Allocations: 3587)
+  Rendered products/edit.html.erb within layouts/application (Duration: 13.8ms | Allocations: 4171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 11155)
+Completed 200 OK in 39ms (Views: 31.6ms | ActiveRecord: 1.1ms | Allocations: 13249)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2021-03-29 22:32:00 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 15.4ms | Allocations: 12405)
+  Rendered products/edit.html.erb within layouts/application (Duration: 16.6ms | Allocations: 12768)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 12848)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 1.3ms | Allocations: 26886)
+
+
+  
+ActionView::Template::Error (undefined method `status' for #<ActionView::Helpers::FormBuilder:0x00007fc024ae2bf8>):
+    63: 
+    64:   </div>
+    65: <div>
+    66:   <%=form.status %>
+    67: </div>
+    68:   <div class="actions">
+    69:     <%= form.submit %>
+  
+app/views/products/_form.html.erb:66
+app/views/products/_form.html.erb:1
+app/views/products/edit.html.erb:3
+Started GET "/products/1/edit" for 127.0.0.1 at 2021-03-29 22:32:10 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 20.3ms | Allocations: 4146)
+  Rendered products/edit.html.erb within layouts/application (Duration: 23.6ms | Allocations: 4548)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 45.3ms | Allocations: 11636)
+Completed 200 OK in 59ms (Views: 51.7ms | ActiveRecord: 1.5ms | Allocations: 14649)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 22:32:12 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 67.1ms | Allocations: 14252)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 74.7ms | Allocations: 21075)
+Completed 200 OK in 78ms (Views: 73.5ms | ActiveRecord: 2.2ms | Allocations: 21806)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2021-03-29 22:32:17 +0700
+Processing by ProductsController#new as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 9.5ms | Allocations: 2730)
+  Rendered products/new.html.erb within layouts/application (Duration: 12.7ms | Allocations: 2990)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 10417)
+Completed 200 OK in 29ms (Views: 23.9ms | ActiveRecord: 0.6ms | Allocations: 12109)
+
+
+Started POST "/products" for 127.0.0.1 at 2021-03-29 22:32:46 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"com", "description"=>"broken", "stock"=>"1", "price"=>"100", "category_ids"=>["", "5"], "status"=>"1"}, "commit"=>"Create Product"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :status[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/products_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "stock", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "com"], ["description", "broken"], ["stock", 1], ["price", 100], ["created_at", "2021-03-29 15:32:46.789696"], ["updated_at", "2021-03-29 15:32:46.789696"]]
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+  [1m[36mProductCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 33], ["category_id", 5], ["created_at", "2021-03-29 15:32:46.794163"], ["updated_at", "2021-03-29 15:32:46.794163"]]
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+Redirected to http://127.0.0.1:3000/products/33
+Completed 302 Found in 31ms (ActiveRecord: 2.4ms | Allocations: 12115)
+
+
+Started GET "/products/33" for 127.0.0.1 at 2021-03-29 22:32:46 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 315)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 7131)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.1ms | Allocations: 8252)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 22:34:14 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 59.9ms | Allocations: 27519)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.3ms | Allocations: 34246)
+Completed 200 OK in 80ms (Views: 77.0ms | ActiveRecord: 5.3ms | Allocations: 36789)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2021-03-29 22:34:18 +0700
+Processing by ProductsController#new as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 8.3ms | Allocations: 3216)
+  Rendered products/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 3370)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 10323)
+Completed 200 OK in 35ms (Views: 20.1ms | ActiveRecord: 0.7ms | Allocations: 12430)
+
+
+Started POST "/products" for 127.0.0.1 at 2021-03-29 22:34:32 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>";;;;;;;", "description"=>"mmmm", "stock"=>"1", "price"=>"1", "category_ids"=>["", "7"], "status"=>"1"}, "commit"=>"Create Product"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :status[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/products_controller.rb:27:in `create'
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:32:in `block in create'
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "stock", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", ";;;;;;;"], ["description", "mmmm"], ["stock", 1], ["price", 1], ["created_at", "2021-03-29 15:34:32.201757"], ["updated_at", "2021-03-29 15:34:32.201757"]]
+  ↳ app/controllers/products_controller.rb:32:in `block in create'
+  [1m[36mProductCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 34], ["category_id", 7], ["created_at", "2021-03-29 15:34:32.207623"], ["updated_at", "2021-03-29 15:34:32.207623"]]
+  ↳ app/controllers/products_controller.rb:32:in `block in create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:32:in `block in create'
+Redirected to http://127.0.0.1:3000/products/34
+Completed 302 Found in 29ms (ActiveRecord: 3.7ms | Allocations: 9384)
+
+
+Started GET "/products/34" for 127.0.0.1 at 2021-03-29 22:34:32 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 6923)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 1.0ms | Allocations: 8024)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 22:43:49 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 55.8ms | Allocations: 28634)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 69.4ms | Allocations: 35623)
+Completed 200 OK in 77ms (Views: 72.0ms | ActiveRecord: 2.0ms | Allocations: 38955)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2021-03-29 22:43:52 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 12.3ms | Allocations: 4089)
+  Rendered products/edit.html.erb within layouts/application (Duration: 14.1ms | Allocations: 4496)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 11954)
+Completed 200 OK in 36ms (Views: 26.3ms | ActiveRecord: 1.1ms | Allocations: 14843)
+
+
+Started PATCH "/products/1" for 127.0.0.1 at 2021-03-29 22:43:54 +0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"bear", "description"=>"from northern forest", "stock"=>"2", "price"=>"100000", "category_ids"=>["", "2"], "status"=>"published"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:41:in `update'
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:43:in `block in update'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/products_controller.rb:43:in `block in update'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:43:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:43:in `block in update'
+Redirected to http://127.0.0.1:3000/products/1
+Completed 302 Found in 13ms (ActiveRecord: 0.9ms | Allocations: 5591)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-03-29 22:43:54 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 315)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 7131)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.2ms | Allocations: 8252)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 22:43:55 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 29.4ms | Allocations: 10703)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.6ms | Allocations: 17602)
+Completed 200 OK in 41ms (Views: 38.2ms | ActiveRecord: 1.7ms | Allocations: 18141)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2021-03-29 22:45:09 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 14.2ms | Allocations: 10973)
+  Rendered products/edit.html.erb within layouts/application (Duration: 14.7ms | Allocations: 11119)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 17846)
+Completed 200 OK in 42ms (Views: 22.2ms | ActiveRecord: 2.4ms | Allocations: 32148)
+
+
+Started PATCH "/products/1" for 127.0.0.1 at 2021-03-29 22:45:12 +0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"bear", "description"=>"from northern forest", "stock"=>"2", "price"=>"100000", "category_ids"=>["", "2"], "status"=>"published"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:42:in `update'
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+Redirected to http://127.0.0.1:3000/products/1
+Completed 302 Found in 26ms (ActiveRecord: 1.6ms | Allocations: 5882)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-03-29 22:45:12 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 6926)
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 0.3ms | Allocations: 7915)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2021-03-29 22:45:36 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 9.0ms | Allocations: 3991)
+  Rendered products/edit.html.erb within layouts/application (Duration: 9.5ms | Allocations: 4143)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 11103)
+Completed 200 OK in 40ms (Views: 33.5ms | ActiveRecord: 0.9ms | Allocations: 13198)
+
+
+Started PATCH "/products/1" for 127.0.0.1 at 2021-03-29 22:45:40 +0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"bear", "description"=>"from northern forest", "stock"=>"2", "price"=>"100000", "category_ids"=>["", "2"], "status"=>"archived"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:42:in `update'
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+Redirected to http://127.0.0.1:3000/products/1
+Completed 302 Found in 12ms (ActiveRecord: 0.8ms | Allocations: 5428)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-03-29 22:45:40 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 6932)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.2ms | Allocations: 7921)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:44:36 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 89.6ms | Allocations: 25883)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 107.1ms | Allocations: 32610)
+Completed 200 OK in 115ms (Views: 108.7ms | ActiveRecord: 2.0ms | Allocations: 35150)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:44:38 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 23.9ms | Allocations: 10131)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 16944)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 1.3ms | Allocations: 17479)
+
+
+Started GET "/products/5/edit" for 127.0.0.1 at 2021-03-29 23:44:41 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 14.5ms | Allocations: 3545)
+  Rendered products/edit.html.erb within layouts/application (Duration: 15.2ms | Allocations: 3694)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 10646)
+Completed 200 OK in 38ms (Views: 28.5ms | ActiveRecord: 1.0ms | Allocations: 13871)
+
+
+Started PATCH "/products/5" for 127.0.0.1 at 2021-03-29 23:44:43 +0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"tomato", "description"=>"rotten tomato", "stock"=>"1", "price"=>"1", "category_ids"=>[""], "status"=>"published"}, "commit"=>"Update Product", "id"=>"5"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:42:in `update'
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+Redirected to http://127.0.0.1:3000/products/5
+Completed 302 Found in 10ms (ActiveRecord: 0.5ms | Allocations: 4815)
+
+
+Started GET "/products/5" for 127.0.0.1 at 2021-03-29 23:44:43 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 6934)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.1ms | Allocations: 7923)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:44:44 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 24.9ms | Allocations: 10676)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.8ms | Allocations: 17587)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 1.4ms | Allocations: 18123)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2021-03-29 23:44:48 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 9.7ms | Allocations: 3983)
+  Rendered products/edit.html.erb within layouts/application (Duration: 10.2ms | Allocations: 4127)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 11088)
+Completed 200 OK in 27ms (Views: 19.5ms | ActiveRecord: 0.9ms | Allocations: 13182)
+
+
+Started PATCH "/products/1" for 127.0.0.1 at 2021-03-29 23:44:50 +0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"bear", "description"=>"from northern forest", "stock"=>"2", "price"=>"100000", "category_ids"=>["", "2"], "status"=>"published"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:42:in `update'
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+Redirected to http://127.0.0.1:3000/products/1
+Completed 302 Found in 11ms (ActiveRecord: 0.7ms | Allocations: 5437)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2021-03-29 23:44:50 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 6930)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.1ms | Allocations: 7920)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:44:52 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 29.1ms | Allocations: 10686)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.5ms | Allocations: 17601)
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 1.6ms | Allocations: 18139)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2021-03-29 23:46:08 +0700
+Processing by ProductsController#new as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 7.9ms | Allocations: 3135)
+  Rendered products/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 3388)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 10349)
+Completed 200 OK in 27ms (Views: 22.0ms | ActiveRecord: 0.5ms | Allocations: 12031)
+
+
+Started POST "/products" for 127.0.0.1 at 2021-03-29 23:46:18 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"delete", "description"=>"aaaaaaa", "stock"=>"1", "price"=>"1", "category_ids"=>[""], "status"=>"published"}, "commit"=>"Create Product"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "stock", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "delete"], ["description", "aaaaaaa"], ["stock", 1], ["price", 1], ["created_at", "2021-03-29 16:46:18.674123"], ["updated_at", "2021-03-29 16:46:18.674123"]]
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+Redirected to http://127.0.0.1:3000/products/35
+Completed 302 Found in 13ms (ActiveRecord: 1.7ms | Allocations: 3977)
+
+
+Started GET "/products/35" for 127.0.0.1 at 2021-03-29 23:46:18 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 110)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 6925)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.2ms | Allocations: 7915)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:46:20 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 30.2ms | Allocations: 10788)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.9ms | Allocations: 17616)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 1.7ms | Allocations: 18155)
+
+
+Started GET "/products?page=5" for 127.0.0.1 at 2021-03-29 23:46:21 +0700
+Processing by ProductsController#index as HTML
+  Parameters: {"page"=>"5"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 20]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 33]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 34]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 35]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 25.7ms | Allocations: 8849)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 15663)
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 1.0ms | Allocations: 16197)
+
+
+Started GET "/products?page=5" for 127.0.0.1 at 2021-03-29 23:48:16 +0700
+Processing by ProductsController#index as HTML
+  Parameters: {"page"=>"5"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 20]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 33]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 34]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 35]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 51.6ms | Allocations: 24690)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 118.9ms | Allocations: 31417)
+Completed 200 OK in 124ms (Views: 120.1ms | ActiveRecord: 4.9ms | Allocations: 33952)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2021-03-29 23:48:23 +0700
+Processing by ProductsController#new as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 5.7ms | Allocations: 2697)
+  Rendered products/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 3250)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 10233)
+Completed 200 OK in 28ms (Views: 20.0ms | ActiveRecord: 0.5ms | Allocations: 12340)
+
+
+Started POST "/products" for 127.0.0.1 at 2021-03-29 23:48:50 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"delete", "description"=>"g", "stock"=>"1", "price"=>"1", "category_ids"=>[""], "status"=>"published"}, "commit"=>"Create Product"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "stock", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "delete"], ["description", "g"], ["stock", 1], ["price", 1], ["created_at", "2021-03-29 16:48:50.950247"], ["updated_at", "2021-03-29 16:48:50.950247"]]
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+Redirected to http://127.0.0.1:3000/products/36
+Completed 302 Found in 15ms (ActiveRecord: 1.9ms | Allocations: 4095)
+
+
+Started GET "/products/36" for 127.0.0.1 at 2021-03-29 23:48:50 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 6934)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.4ms | Allocations: 8035)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:48:52 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 30.3ms | Allocations: 10683)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.7ms | Allocations: 17594)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 1.7ms | Allocations: 18132)
+
+
+Started GET "/products?page=5" for 127.0.0.1 at 2021-03-29 23:48:53 +0700
+Processing by ProductsController#index as HTML
+  Parameters: {"page"=>"5"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 20]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 33]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 34]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 35]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 36]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 24.8ms | Allocations: 8887)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.9ms | Allocations: 15811)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 1.3ms | Allocations: 16345)
+
+
+Started GET "/products/36/edit" for 127.0.0.1 at 2021-03-29 23:48:57 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 36]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 13.6ms | Allocations: 3964)
+  Rendered products/edit.html.erb within layouts/application (Duration: 14.2ms | Allocations: 4130)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 11102)
+Completed 200 OK in 37ms (Views: 29.8ms | ActiveRecord: 1.2ms | Allocations: 13197)
+
+
+Started PATCH "/products/36" for 127.0.0.1 at 2021-03-29 23:49:00 +0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"delete", "description"=>"g", "stock"=>"1", "price"=>"1", "category_ids"=>[""], "status"=>"archived"}, "commit"=>"Update Product", "id"=>"36"}
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:42:in `update'
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 36]]
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+Redirected to http://127.0.0.1:3000/products/36
+Completed 302 Found in 17ms (ActiveRecord: 1.7ms | Allocations: 4698)
+
+
+Started GET "/products/36" for 127.0.0.1 at 2021-03-29 23:49:00 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 6923)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.2ms | Allocations: 7912)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:49:01 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 28.6ms | Allocations: 10678)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.2ms | Allocations: 17603)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 1.7ms | Allocations: 18139)
+
+
+Started GET "/products?page=5" for 127.0.0.1 at 2021-03-29 23:49:02 +0700
+Processing by ProductsController#index as HTML
+  Parameters: {"page"=>"5"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (14.5ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 20]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 33]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 34]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 35]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 36]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 34.4ms | Allocations: 8928)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.6ms | Allocations: 15836)
+Completed 200 OK in 45ms (Views: 29.1ms | ActiveRecord: 15.1ms | Allocations: 16370)
+
+
+Started GET "/" for 127.0.0.1 at 2021-03-29 23:49:43 +0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 109.7ms | Allocations: 38867)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 150.2ms | Allocations: 48270)
+Completed 200 OK in 192ms (Views: 155.1ms | ActiveRecord: 3.4ms | Allocations: 54496)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2021-03-29 23:49:46 +0700
+Processing by ProductsController#new as HTML
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 24.2ms | Allocations: 4714)
+  Rendered products/new.html.erb within layouts/application (Duration: 26.7ms | Allocations: 5544)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 45.7ms | Allocations: 12523)
+Completed 200 OK in 59ms (Views: 46.4ms | ActiveRecord: 1.3ms | Allocations: 14920)
+
+
+Started POST "/products" for 127.0.0.1 at 2021-03-29 23:49:55 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"delete", "description"=>"rottenn", "stock"=>"1", "price"=>"1", "category_ids"=>[""], "status"=>"archived"}, "commit"=>"Create Product"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "stock", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "delete"], ["description", "rottenn"], ["stock", 1], ["price", 1], ["created_at", "2021-03-29 16:49:55.245554"], ["updated_at", "2021-03-29 16:49:55.245554"]]
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+Redirected to http://127.0.0.1:3000/products/37
+Completed 302 Found in 17ms (ActiveRecord: 2.1ms | Allocations: 4309)
+
+
+Started GET "/products/37" for 127.0.0.1 at 2021-03-29 23:49:55 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 327)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 7143)
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 0.4ms | Allocations: 8380)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:49:56 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 44.6ms | Allocations: 10767)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 58.7ms | Allocations: 17608)
+Completed 200 OK in 61ms (Views: 58.8ms | ActiveRecord: 1.5ms | Allocations: 18151)
+
+
+Started GET "/products?page=5" for 127.0.0.1 at 2021-03-29 23:49:58 +0700
+Processing by ProductsController#index as HTML
+  Parameters: {"page"=>"5"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 20]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 33]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 34]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 35]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 36]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 37]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 23.7ms | Allocations: 11148)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 17985)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 1.1ms | Allocations: 18526)
+
+
+Started DELETE "/products/33" for 127.0.0.1 at 2021-03-29 23:50:02 +0700
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"33"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:56:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+  [1m[36mProduct Destroy (1.5ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 33]]
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+Redirected to http://127.0.0.1:3000/products
+Completed 302 Found in 19ms (ActiveRecord: 4.4ms | Allocations: 3825)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:50:02 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 27.8ms | Allocations: 10140)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 16953)
+Completed 200 OK in 41ms (Views: 37.0ms | ActiveRecord: 1.9ms | Allocations: 17493)
+
+
+Started DELETE "/products/1" for 127.0.0.1 at 2021-03-29 23:50:05 +0700
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:56:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+  [1m[36mProduct Destroy (1.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+Redirected to http://127.0.0.1:3000/products
+Completed 302 Found in 33ms (ActiveRecord: 3.4ms | Allocations: 3826)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:50:05 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 2]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 26.7ms | Allocations: 10101)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 16927)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 1.8ms | Allocations: 17469)
+
+
+Started DELETE "/products/2" for 127.0.0.1 at 2021-03-29 23:50:07 +0700
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:56:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+  [1m[36mProduct Destroy (0.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+Redirected to http://127.0.0.1:3000/products
+Completed 302 Found in 10ms (ActiveRecord: 1.9ms | Allocations: 3801)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:50:07 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 3]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 18.5ms | Allocations: 10066)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 16879)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 1.3ms | Allocations: 17417)
+
+
+Started DELETE "/products/3" for 127.0.0.1 at 2021-03-29 23:50:08 +0700
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"3"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:56:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+  [1m[36mProduct Destroy (1.7ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+Redirected to http://127.0.0.1:3000/products
+Completed 302 Found in 17ms (ActiveRecord: 3.4ms | Allocations: 3804)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:50:08 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 22.4ms | Allocations: 10066)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.7ms | Allocations: 16890)
+Completed 200 OK in 36ms (Views: 31.8ms | ActiveRecord: 1.7ms | Allocations: 17430)
+
+
+Started GET "/products/4/edit" for 127.0.0.1 at 2021-03-29 23:52:14 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 12.7ms | Allocations: 4050)
+  Rendered products/edit.html.erb within layouts/application (Duration: 14.5ms | Allocations: 4334)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 11271)
+Completed 200 OK in 37ms (Views: 24.0ms | ActiveRecord: 1.6ms | Allocations: 13514)
+
+
+Started PATCH "/products/4" for 127.0.0.1 at 2021-03-29 23:52:17 +0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"food", "description"=>"rotten", "stock"=>"1", "price"=>"1", "category_ids"=>[""], "status"=>"published"}, "commit"=>"Update Product", "id"=>"4"}
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:42:in `update'
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+Redirected to http://127.0.0.1:3000/products/4
+Completed 302 Found in 21ms (ActiveRecord: 1.9ms | Allocations: 4739)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2021-03-29 23:52:18 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 110)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 6938)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.3ms | Allocations: 7931)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:52:18 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 26.1ms | Allocations: 10625)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.8ms | Allocations: 17523)
+Completed 200 OK in 36ms (Views: 32.7ms | ActiveRecord: 1.7ms | Allocations: 18062)
+
+
+Started GET "/products/4/edit" for 127.0.0.1 at 2021-03-29 23:53:11 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 12.9ms | Allocations: 3992)
+  Rendered products/edit.html.erb within layouts/application (Duration: 28.1ms | Allocations: 4165)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 46.5ms | Allocations: 11105)
+Completed 200 OK in 57ms (Views: 46.4ms | ActiveRecord: 2.0ms | Allocations: 13200)
+
+
+Started PATCH "/products/4" for 127.0.0.1 at 2021-03-29 23:53:13 +0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"food", "description"=>"rotten", "stock"=>"1", "price"=>"1", "category_ids"=>[""], "status"=>"published"}, "commit"=>"Update Product", "id"=>"4"}
+  [1m[36mAdmin Load (1.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:42:in `update'
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+Redirected to http://127.0.0.1:3000/products/4
+Completed 302 Found in 21ms (ActiveRecord: 2.2ms | Allocations: 4671)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2021-03-29 23:53:13 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 6925)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.1ms | Allocations: 7915)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:53:14 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 27.5ms | Allocations: 10714)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 17530)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 1.7ms | Allocations: 18066)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:54:28 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 50.0ms | Allocations: 26218)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 62.8ms | Allocations: 35440)
+Completed 200 OK in 68ms (Views: 63.6ms | ActiveRecord: 3.8ms | Allocations: 37979)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:54:29 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 30.5ms | Allocations: 10064)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.6ms | Allocations: 16877)
+Completed 200 OK in 51ms (Views: 48.7ms | ActiveRecord: 1.6ms | Allocations: 17412)
+
+
+Started GET "/products/4/edit" for 127.0.0.1 at 2021-03-29 23:54:32 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 30.2ms | Allocations: 5697)
+  Rendered products/edit.html.erb within layouts/application (Duration: 30.8ms | Allocations: 5843)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 12776)
+Completed 200 OK in 55ms (Views: 40.0ms | ActiveRecord: 0.7ms | Allocations: 16041)
+
+
+Started PATCH "/products/4" for 127.0.0.1 at 2021-03-29 23:54:35 +0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"food", "description"=>"rotten", "stock"=>"1", "price"=>"1", "category_ids"=>[""], "status"=>"published"}, "commit"=>"Update Product", "id"=>"4"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:42:in `update'
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+Redirected to http://127.0.0.1:3000/products/4
+Completed 302 Found in 12ms (ActiveRecord: 0.8ms | Allocations: 4813)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2021-03-29 23:54:35 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 6923)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.2ms | Allocations: 7913)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-29 23:54:36 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 26.3ms | Allocations: 10612)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 17526)
+Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 1.6ms | Allocations: 18062)
+
+
+Started GET "/products/4/edit" for 127.0.0.1 at 2021-03-29 23:55:21 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 12.1ms | Allocations: 3985)
+  Rendered products/edit.html.erb within layouts/application (Duration: 12.5ms | Allocations: 4129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 11101)
+Completed 200 OK in 29ms (Views: 22.7ms | ActiveRecord: 1.1ms | Allocations: 13197)
+
+
+Started GET "/products/4/edit" for 127.0.0.1 at 2021-03-30 00:04:05 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 22.0ms | Allocations: 10363)
+  Rendered products/edit.html.erb within layouts/application (Duration: 22.7ms | Allocations: 10509)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | Allocations: 17237)
+Completed 200 OK in 71ms (Views: 40.5ms | ActiveRecord: 1.6ms | Allocations: 30517)
+
+
+Started PATCH "/products/4" for 127.0.0.1 at 2021-03-30 00:04:08 +0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"food", "description"=>"rotten", "stock"=>"1", "price"=>"1", "category_ids"=>[""], "status"=>"published"}, "commit"=>"Update Product", "id"=>"4"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:42:in `update'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms | Allocations: 4463)
+
+
+  
+NameError (undefined local variable or method `draft' for #<ProductsController:0x007fe5be81d700>):
+  
+app/controllers/products_controller.rb:86:in `product_params'
+app/controllers/products_controller.rb:45:in `block in update'
+app/controllers/products_controller.rb:44:in `update'
+Started GET "/products/4/edit" for 127.0.0.1 at 2021-03-30 00:04:10 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 11.3ms | Allocations: 3671)
+  Rendered products/edit.html.erb within layouts/application (Duration: 13.2ms | Allocations: 3821)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 10767)
+Completed 200 OK in 31ms (Views: 23.2ms | ActiveRecord: 0.9ms | Allocations: 13101)
+
+
+Started GET "/products/4/edit" for 127.0.0.1 at 2021-03-30 00:10:32 +0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 97.5ms | Allocations: 20822)
+  Rendered products/edit.html.erb within layouts/application (Duration: 101.8ms | Allocations: 21535)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 164.8ms | Allocations: 30976)
+Completed 200 OK in 261ms (Views: 168.6ms | ActiveRecord: 5.3ms | Allocations: 48668)
+
+
+Started GET "/products/4/edit" for 127.0.0.1 at 2021-03-30 00:10:33 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 20.4ms | Allocations: 3484)
+  Rendered products/edit.html.erb within layouts/application (Duration: 21.1ms | Allocations: 3630)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 48.4ms | Allocations: 10446)
+Completed 200 OK in 62ms (Views: 49.6ms | ActiveRecord: 1.2ms | Allocations: 12555)
+
+
+Started PATCH "/products/4" for 127.0.0.1 at 2021-03-30 00:10:38 +0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"food", "description"=>"rotten", "stock"=>"1", "price"=>"1", "category_ids"=>[""], "status"=>"published"}, "commit"=>"Update Product", "id"=>"4"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:42:in `update'
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+Redirected to http://127.0.0.1:3000/products/4
+Completed 302 Found in 11ms (ActiveRecord: 0.6ms | Allocations: 5283)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2021-03-30 00:10:38 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 328)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 7157)
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 8279)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-30 00:10:39 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 60.8ms | Allocations: 14395)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 77.4ms | Allocations: 21207)
+Completed 200 OK in 80ms (Views: 76.1ms | ActiveRecord: 2.0ms | Allocations: 21946)
+
+
+Started GET "/products/5/edit" for 127.0.0.1 at 2021-03-30 00:13:25 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 24.5ms | Allocations: 3510)
+  Rendered products/edit.html.erb within layouts/application (Duration: 25.3ms | Allocations: 3657)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 10605)
+Completed 200 OK in 44ms (Views: 34.7ms | ActiveRecord: 0.7ms | Allocations: 13207)
+
+
+Started PATCH "/products/5" for 127.0.0.1 at 2021-03-30 00:13:27 +0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"tomato", "description"=>"rotten tomato", "stock"=>"1", "price"=>"1", "category_ids"=>[""], "status"=>"published"}, "commit"=>"Update Product", "id"=>"5"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:42:in `update'
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+Redirected to http://127.0.0.1:3000/products/5
+Completed 302 Found in 11ms (ActiveRecord: 0.8ms | Allocations: 4668)
+
+
+Started GET "/products/5" for 127.0.0.1 at 2021-03-30 00:13:27 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 110)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 6925)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.1ms | Allocations: 7915)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-30 00:13:28 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 25.6ms | Allocations: 10642)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.3ms | Allocations: 17542)
+Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 1.6ms | Allocations: 18092)
+
+
+Started GET "/products/4/edit" for 127.0.0.1 at 2021-03-30 00:13:31 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 11.0ms | Allocations: 3981)
+  Rendered products/edit.html.erb within layouts/application (Duration: 12.5ms | Allocations: 4132)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 11102)
+Completed 200 OK in 31ms (Views: 23.5ms | ActiveRecord: 1.1ms | Allocations: 13217)
+
+
+Started PATCH "/products/4" for 127.0.0.1 at 2021-03-30 00:13:35 +0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"food", "description"=>"rotten", "stock"=>"1", "price"=>"1", "category_ids"=>[""], "status"=>"published"}, "commit"=>"Update Product", "id"=>"4"}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:42:in `update'
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:45:in `block in update'
+Redirected to http://127.0.0.1:3000/products/4
+Completed 302 Found in 13ms (ActiveRecord: 1.0ms | Allocations: 4672)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2021-03-30 00:13:35 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 6923)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.2ms | Allocations: 7913)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-30 00:13:40 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 24.9ms | Allocations: 10625)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 17530)
+Completed 200 OK in 45ms (Views: 42.0ms | ActiveRecord: 1.7ms | Allocations: 18069)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2021-03-30 00:15:17 +0700
+Processing by ProductsController#new as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 21.8ms | Allocations: 5585)
+  Rendered products/new.html.erb within layouts/application (Duration: 64.3ms | Allocations: 5821)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 77.7ms | Allocations: 12539)
+Completed 200 OK in 83ms (Views: 78.2ms | ActiveRecord: 0.4ms | Allocations: 14231)
+
+
+Started POST "/products" for 127.0.0.1 at 2021-03-30 00:15:31 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"j", "description"=>"j", "stock"=>"7", "price"=>"1", "category_ids"=>[""], "status"=>"published"}, "commit"=>"Create Product"}
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :status[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "stock", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "j"], ["description", "j"], ["stock", 7], ["price", 1], ["created_at", "2021-03-29 17:15:31.793767"], ["updated_at", "2021-03-29 17:15:31.793767"]]
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+Redirected to http://127.0.0.1:3000/products/38
+Completed 302 Found in 16ms (ActiveRecord: 3.1ms | Allocations: 4042)
+
+
+Started GET "/products/38" for 127.0.0.1 at 2021-03-30 00:15:31 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 110)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 6925)
+Completed 200 OK in 20ms (Views: 13.4ms | ActiveRecord: 1.1ms | Allocations: 7916)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-30 00:15:33 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 36.7ms | Allocations: 10636)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 45.8ms | Allocations: 17546)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 1.9ms | Allocations: 18085)
+
+
+Started GET "/products?page=5" for 127.0.0.1 at 2021-03-30 00:16:13 +0700
+Processing by ProductsController#index as HTML
+  Parameters: {"page"=>"5"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 20]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 37]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 38]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 35.6ms | Allocations: 7762)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 46.6ms | Allocations: 14576)
+Completed 200 OK in 49ms (Views: 46.5ms | ActiveRecord: 1.0ms | Allocations: 15116)
+
+
+Started GET "/products/38/edit" for 127.0.0.1 at 2021-03-30 00:16:14 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 38]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 10.7ms | Allocations: 3488)
+  Rendered products/edit.html.erb within layouts/application (Duration: 11.1ms | Allocations: 3632)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 10446)
+Completed 200 OK in 25ms (Views: 18.2ms | ActiveRecord: 1.4ms | Allocations: 12541)
+
+
+Started GET "/products/38/edit" for 127.0.0.1 at 2021-03-30 00:33:20 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"38"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 38]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 21.8ms | Allocations: 10401)
+  Rendered products/edit.html.erb within layouts/application (Duration: 22.2ms | Allocations: 10547)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.4ms | Allocations: 17274)
+Completed 200 OK in 64ms (Views: 41.8ms | ActiveRecord: 1.4ms | Allocations: 30573)
+
+
+Started GET "/products/38/edit" for 127.0.0.1 at 2021-03-30 00:33:20 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 38]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 14.8ms | Allocations: 3477)
+  Rendered products/edit.html.erb within layouts/application (Duration: 16.5ms | Allocations: 3620)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.5ms | Allocations: 10434)
+Completed 200 OK in 49ms (Views: 38.7ms | ActiveRecord: 0.7ms | Allocations: 12522)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-30 00:33:22 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 60.2ms | Allocations: 11725)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 67.5ms | Allocations: 18549)
+Completed 200 OK in 69ms (Views: 65.4ms | ActiveRecord: 2.8ms | Allocations: 19150)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2021-03-30 00:33:23 +0700
+Processing by ProductsController#new as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 5.9ms | Allocations: 2672)
+  Rendered products/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2798)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 10206)
+Completed 200 OK in 22ms (Views: 18.1ms | ActiveRecord: 0.4ms | Allocations: 11761)
+
+
+Started POST "/products" for 127.0.0.1 at 2021-03-30 00:33:35 +0700
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"bed", "description"=>"smooth as silk", "stock"=>"1", "price"=>"3", "category_ids"=>["", "5"], "status"=>"published"}, "commit"=>"Create Product"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :status[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/products_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "stock", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "bed"], ["description", "smooth as silk"], ["stock", 1], ["price", 3], ["created_at", "2021-03-29 17:33:36.009396"], ["updated_at", "2021-03-29 17:33:36.009396"]]
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+  [1m[36mProductCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "product_categories" ("product_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["product_id", 39], ["category_id", 5], ["created_at", "2021-03-29 17:33:36.012381"], ["updated_at", "2021-03-29 17:33:36.012381"]]
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:31:in `block in create'
+Redirected to http://127.0.0.1:3000/products/39
+Completed 302 Found in 21ms (ActiveRecord: 2.6ms | Allocations: 9694)
+
+
+Started GET "/products/39" for 127.0.0.1 at 2021-03-30 00:33:36 +0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 6923)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.1ms | Allocations: 7913)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-03-30 00:33:36 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 4]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 6]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 9]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 10]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/products/index.html.erb:57
+  Rendered products/index.html.erb within layouts/application (Duration: 27.2ms | Allocations: 10619)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 17540)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 1.6ms | Allocations: 18082)
+
+
+Started GET "/products?page=5" for 127.0.0.1 at 2021-03-30 00:33:37 +0700
+Processing by ProductsController#index as HTML
+  Parameters: {"page"=>"5"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 20]]
+  ↳ app/views/products/index.html.erb:18
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 37]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:40
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 38]]
+  ↳ app/views/products/index.html.erb:24
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 39]]
+  ↳ app/views/products/index.html.erb:24
+  Rendered products/index.html.erb within layouts/application (Duration: 18.9ms | Allocations: 7776)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 14736)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 1.3ms | Allocations: 15270)
+
+
