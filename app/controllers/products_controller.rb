@@ -21,12 +21,10 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    puts @product.status
   end
 
   def create
-    @product = Product.new(product_params)
-    puts @product.status
+    @product = Product.create(product_params)
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: "Product was successfully created." }
@@ -41,6 +39,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     puts @product.status
+    puts product_params
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: "Product was successfully updated." }
@@ -83,8 +82,7 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      keys = params.fetch(:status, {}).keys
-      params.require(:product).permit(:title, :description, :stock, :price, category_ids: [], status: keys)
+      params.require(:product).permit(:title, :description, :stock, :price, :status, category_ids: [])
     end
 
     def generate_csv(products)

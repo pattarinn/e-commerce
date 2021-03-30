@@ -46,15 +46,8 @@
   <div>
 
     <%#= form.select(:status, options_for_select(Product.statuses.map {|k, v| [k.humanize.capitalize, v]}))%>
+    <label for="status">Status</label>
     <%= form.select(:status, options_for_select(Product.statuses.keys))%>
-
-
-<!--    <label for="status">Choose status</label>-->
-<!--    <select name="status" id="status">-->
-<!--      <option value="draft">draft</option>-->
-<!--      <option value="published">published</option>-->
-<!--      <option value="archived">archived</option>-->
-<!--    </select>-->
 
     <%#= form.radio_button(:status, Product.statuses[:draft]) %>
     <%#= form.label(:status, "draft") %>
