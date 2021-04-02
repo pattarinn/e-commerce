@@ -47,7 +47,7 @@
 
     <%#= form.select(:status, options_for_select(Product.statuses.map {|k, v| [k.humanize.capitalize, v]}))%>
     <label for="status">Status</label>
-    <%= form.select(:status, options_for_select(Product.statuses.keys))%>
+    <%= form.select(:status, options_for_select(Product.statuses.keys, :selected => @product.status))%>
 
     <%#= form.radio_button(:status, Product.statuses[:draft]) %>
     <%#= form.label(:status, "draft") %>
