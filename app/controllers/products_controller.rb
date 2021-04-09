@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-    @products = @products.page(params[:page]).per(5)
+    @products = @products.page(params[:page]).per(10)
 
     respond_to do |format|
       format.html
@@ -82,7 +82,8 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:title, :description, :stock, :price, :status, category_ids: [])
+      params.require(:product).permit(:title, :description, :stock, :price, :status, :cover_image,
+                                      category_ids: [], images: [])
     end
 
     def generate_csv(products)

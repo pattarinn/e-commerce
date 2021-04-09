@@ -34,27 +34,26 @@
   <div>
     <label for="category">Choose category</label>
     <%= form.collection_check_boxes :category_ids, Category.all, :id, :name %>
-
-    <!--    <select name="category" id="category">-->
-    <%# Category.all.each do |c| %>
-    <!--       <option value="<%#= c.id %>"><%#= c.name %></option>-->
-    <%#= form.check_box(c.name, :value => c.id) %>
-    <%# end %>
-    <!--    </select>-->
   </div>
 
   <div>
-
-    <%#= form.select(:status, options_for_select(Product.statuses.map {|k, v| [k.humanize.capitalize, v]}))%>
     <label for="status">Status</label>
-    <%= form.select(:status, options_for_select(Product.statuses.keys, :selected => @product.status))%>
-
-    <%#= form.radio_button(:status, Product.statuses[:draft]) %>
-    <%#= form.label(:status, "draft") %>
-    <%#= form.radio_button(:status, Product.statuses[:archived]) %>
-    <%#= form.label(:status, "archived") %>
-
+    <%= form.select(:status, options_for_select(Product.statuses.keys, :selected => @product.status)) %>
   </div>
+
+  <div>
+    <%= form.file_field :cover_image %>
+    <%# if product.cover_image.attached? %>
+      <%#= form.file_field :cover_image, image_url: product.cover_image %>
+    <%# else %>
+      <%#= form.file_field :cover_image %>
+    <%# end  %>
+  </div>
+
+  <div>
+    <%= form.file_field :images, multiple: true %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

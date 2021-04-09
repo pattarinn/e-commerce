@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.create(category_params)
+    redirect_to :controller => 'products', :action => 'index'
   end
 
   def edit
