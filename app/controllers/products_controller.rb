@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
+      format.html { redirect_to admin_products_url, notice: "Product was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -71,6 +71,12 @@ class ProductsController < ApplicationController
       c = Category.where(name: attr[4])
       p.categories << c
     end
+    redirect_to action: :index
+  end
+
+  def remove_image_attachment
+    image = ActiveStorage::Attachment.find(params[:id])
+    image.purge
     redirect_to action: :index
   end
 

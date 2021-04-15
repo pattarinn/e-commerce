@@ -42,16 +42,35 @@
   </div>
 
   <div>
+    <label for="cover_image">Choose cover image</label>
     <%= form.file_field :cover_image %>
-    <%# if product.cover_image.attached? %>
-      <%#= form.file_field :cover_image, image_url: product.cover_image %>
-    <%# else %>
-      <%#= form.file_field :cover_image %>
-    <%# end  %>
+    <div>
+      <% if @product.cover_image.attached? %>
+        <%= image_tag @product.cover_image, height: '200px' %>
+        <div>
+          <%#= link_to 'Remove', products_remove_image_attachment_path(id: @product.cover_image.id) %>
+          <%#= form_tag(products_remove_image_attachment_path) do %>
+            <%#= submit_tag(:remove) %>
+            <%# end %>
+          <a href="<%= products_remove_image_attachment_path %>">remove</a>
+        </div>
+      <% end %>
+    </div>
   </div>
 
+
+  <br>
+
   <div>
+    <label for="images">Choose images</label>
     <%= form.file_field :images, multiple: true %>
+    <div>
+      <% if @product.images.attached? %>
+        <% @product.images.each do |image| %>
+          <%= image_tag image, height: '200px' %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 
   <div class="actions">
