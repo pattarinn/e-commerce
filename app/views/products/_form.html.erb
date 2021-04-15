@@ -48,11 +48,8 @@
       <% if @product.cover_image.attached? %>
         <%= image_tag @product.cover_image, height: '200px' %>
         <div>
-          <%#= link_to 'Remove', products_remove_image_attachment_path(id: @product.cover_image.id) %>
-          <%#= form_tag(products_remove_image_attachment_path) do %>
-            <%#= submit_tag(:remove) %>
-            <%# end %>
-          <a href="<%= products_remove_image_attachment_path %>">remove</a>
+          <%= link_to 'Remove', remove_image_attachment_product_url(@product.cover_image.id), method: :delete,
+                      data: { confirm: 'Are you sure?'}%>
         </div>
       <% end %>
     </div>
