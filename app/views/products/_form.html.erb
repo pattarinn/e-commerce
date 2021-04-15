@@ -65,6 +65,9 @@
       <% if @product.images.attached? %>
         <% @product.images.each do |image| %>
           <%= image_tag image, height: '200px' %>
+          <%= link_to 'Remove', remove_image_attachment_product_url(image.id), method: :delete,
+                      data: { confirm: 'Are you sure?'}%>
+          <br>
         <% end %>
       <% end %>
     </div>
