@@ -52,6 +52,7 @@
           <% if admin_signed_in? %>
             <a class="fas fa-pen" href=<%= edit_product_path(product) %>></a>
             <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+<!--            <a class="fas fa-trash" href="<%# product_path(product) %>" methods="delete" onclick="return confirm('Are you sure?')"></a>-->
             </td>
           <% end %>
           </tr>
@@ -70,7 +71,7 @@
   </div>
   <div class="col-12">
     <div class="float-right">
-      <%= link_to 'New Category', new_category_path %>
+      <%= link_to 'New Category', new_category_path%>
     </div>
   </div>
   <div>
