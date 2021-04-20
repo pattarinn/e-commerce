@@ -1,25 +1,24 @@
+<%= stylesheet_link_tag "show_product.css" %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Stock:</strong>
-  <%= @product.stock %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
+<body>
+<div class="title">Title: <%= @product.title %></div>
+<div class="description">Description: <%= @product.description %></div>
+<div class="status">Status: <%= @product.status %></div>
+<div class="category">Category:
+  <% if @product.categories.present? %>
+    <% @product.categories.each do |category| %>
+      <%= link_to "#{category.name}", category_path(category) %>
+    <% end %>
+  <% else %>
+    <div>
+      NA
+    </div>
+  <% end %>
+</div>
+<div class="stock">Stock: <%= @product.stock %></div>
+<div class="price">Price: <%= @product.price %></div>
 <div>
   <strong>Cover image</strong>
   <% if @product.cover_image.attached? %>
@@ -38,3 +37,4 @@
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+</body>

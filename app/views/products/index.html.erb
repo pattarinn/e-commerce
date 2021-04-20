@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag "index.css" %>
 
-<!--<p id="notice"><%#= notice %></p>-->
+<p id="notice"><%= notice %></p>
 
 <nav class="navbar sticky-top navbar-light" id="nav">
   <div class="container-fluid">
@@ -18,13 +18,13 @@
             <%= link_to 'New Product', new_product_path, class: "create-product" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: "sign-out" %>
-          </li>
-          <li class="nav-item">
             <%= link_to 'New Category', new_category_path, class: "create-category" %>
           </li>
           <li>
             <%= link_to 'Download CSV', products_path(format: :csv) %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: "sign-out" %>
           </li>
         <% else %>
           <li class="nav-item">
@@ -48,22 +48,8 @@
         <% end %>
       </div>
       <div class="col" id="product-info">
-        <div class="title"><%= product.title %></div>
-        <div class="description"><%= product.description %></div>
-        <div class="status"><%= product.status %></div>
-        <div class="category">
-          <% if product.categories.present? %>
-            <% product.categories.each do |category| %>
-              <%= link_to "#{category.name}", category_path(category) %>
-            <% end %>
-          <% else %>
-            <div>
-              NA
-            </div>
-          <% end %>
-        </div>
-        <div class="stock"><%= product.stock %></div>
-        <div class="price"><%= product.price %></div>
+        <div class="product-title"><%= product.title %></div>
+        <div class="product-description"><%= product.description %></div>
         <div class="action">
           <a class="fas fa-eye" href=<%= product_path(product) %>></a>
           <% if admin_signed_in? %>

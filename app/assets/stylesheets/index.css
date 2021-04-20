@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
 body{
     margin-right: 30px;
     margin-left: 30px;
@@ -18,6 +20,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr;
     /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
+    align-content: center;
 }
 
 #image-column > img{
@@ -34,12 +37,25 @@ body{
 
 #product-info {
     align-content: center;
-    padding: 0;
+    /*padding-top: 30px;*/
+}
+
+#product-info > .title {
+    align-content: center;
 }
 
 #nav {
-    /*background-color: rgba(219, 246, 233, 0.6);*/
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(219, 246, 233, 0.6);
+    /*background-color: rgba(255, 255, 255, 0.6);*/
+}
+
+.product-title {
+    font-size: 30px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.product-description {
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .bottom-menu {
