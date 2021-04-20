@@ -20,6 +20,12 @@
           <li class="nav-item">
             <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: "sign-out" %>
           </li>
+          <li class="nav-item">
+            <%= link_to 'New Category', new_category_path, class: "create-category" %>
+          </li>
+          <li>
+            <%= link_to 'Download CSV', products_path(format: :csv) %>
+          </li>
         <% else %>
           <li class="nav-item">
             <%= link_to 'Sign In', new_admin_session_path %>
@@ -27,7 +33,6 @@
         <% end %>
       </ul>
     </div>
-
 
   </div>
 </nav>
@@ -73,27 +78,16 @@
 
 
 
-<div class="col-6">
-  <%= paginate @products %>
-</div>
-<div class="col-12">
-  <div class="float-right">
-    <%= link_to 'New Category', new_category_path %>
-  </div>
-</div>
-<div>
+
+<div class="bottom-menu">
   <% if admin_signed_in? %>
     <%= form_tag(products_csv_upload_path, multipart: true) do %>
       <%= file_field_tag(:csv_file) %>
       <%= submit_tag(:upload) %>
     <% end %>
   <% end %>
+  <div class="paginate">
+    <%= paginate @products%>
+  </div>
 </div>
-<div>
-  <%= link_to products_path(format: :csv) do %>
-    <%= button_tag('Download CSV', class: 'btn btn-primary float-right') %>
-  <% end %>
-</div>
-
-
 </body>
