@@ -1,28 +1,52 @@
-<p id="notice"><%= notice %></p>
-<div class="col">
-  <h1>Products</h1>
-  <table class="table table-hover">
-    <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Status</th>
-      <th>Categories</th>
-      <th>Stock</th>
-      <th>Price</th>
-      <th>Cover Image</th>
-      <th>Images</th>
-      <th colspan="3"></th>
-    </tr>
-    </thead>
+<%= stylesheet_link_tag "index.css" %>
 
-    <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.title %></td>
-        <td><%= product.description %></td>
-        <td><%= product.status %></td>
-        <td>
+<!--<p id="notice"><%#= notice %></p>-->
+
+<nav class="navbar sticky-top navbar-light" id="nav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Products</a>
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <% if admin_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'New Product', new_product_path, class: "create-product" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: "sign-out" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Sign In', new_admin_session_path %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+
+  </div>
+</nav>
+
+<body>
+
+<div class="wrapper">
+  <% @products.each do |product| %>
+    <div class="row" id="row">
+      <div class="col" id="image-column">
+        <% if product.cover_image.attached? %>
+          <%= image_tag(product.cover_image) %>
+        <% end %>
+      </div>
+      <div class="col" id="product-info">
+        <div class="title"><%= product.title %></div>
+        <div class="description"><%= product.description %></div>
+        <div class="status"><%= product.status %></div>
+        <div class="category">
           <% if product.categories.present? %>
             <% product.categories.each do |category| %>
               <%= link_to "#{category.name}", category_path(category) %>
@@ -32,59 +56,44 @@
               NA
             </div>
           <% end %>
-        </td>
-        <!--                <td><%#= product.categories&.map(&:name)&.join(',').presence || 'NA' %></td>-->
-
-        <td><%= product.stock %></td>
-        <td><%= product.price %></td>
-        <td>
-          <% if product.cover_image.attached? %>
-            <%= image_tag(product.cover_image, width: '64px') %>
-          <% end %>
-        </td>
-        <td>
-          <% product.images.each do |image| %>
-            <%= image_tag(image, width: '32px') %>
-          <% end %>
-        </td>
-        <td>
+        </div>
+        <div class="stock"><%= product.stock %></div>
+        <div class="price"><%= product.price %></div>
+        <div class="action">
           <a class="fas fa-eye" href=<%= product_path(product) %>></a>
           <% if admin_signed_in? %>
             <a class="fas fa-pen" href=<%= edit_product_path(product) %>></a>
             <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-<!--            <a class="fas fa-trash" href="<%# product_path(product) %>" methods="delete" onclick="return confirm('Are you sure?')"></a>-->
-            </td>
           <% end %>
-          </tr>
-    <% end %>
-    </tbody>
-  </table>
-  <br>
-  <% if admin_signed_in? %>
-    <%= link_to 'New Product', new_product_path %>
-    <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete %>
-  <% else %>
-    <%= link_to 'Sign In', new_admin_session_path %>
-  <% end %>
-  <div class="col-6">
-    <%= paginate @products %>
-  </div>
-  <div class="col-12">
-    <div class="float-right">
-      <%= link_to 'New Category', new_category_path%>
+        </div>
+      </div>
     </div>
-  </div>
-  <div>
-    <% if admin_signed_in? %>
-      <%= form_tag(products_csv_upload_path, multipart: true) do %>
-        <%= file_field_tag(:csv_file) %>
-        <%= submit_tag(:upload) %>
-      <% end %>
-    <% end %>
-  </div>
-  <div>
-    <%= link_to products_path(format: :csv) do %>
-      <%= button_tag('Download CSV', class: 'btn btn-primary float-right') %>
-    <% end %>
+  <% end %>
+</div>
+
+
+
+<div class="col-6">
+  <%= paginate @products %>
+</div>
+<div class="col-12">
+  <div class="float-right">
+    <%= link_to 'New Category', new_category_path %>
   </div>
 </div>
+<div>
+  <% if admin_signed_in? %>
+    <%= form_tag(products_csv_upload_path, multipart: true) do %>
+      <%= file_field_tag(:csv_file) %>
+      <%= submit_tag(:upload) %>
+    <% end %>
+  <% end %>
+</div>
+<div>
+  <%= link_to products_path(format: :csv) do %>
+    <%= button_tag('Download CSV', class: 'btn btn-primary float-right') %>
+  <% end %>
+</div>
+
+
+</body>
