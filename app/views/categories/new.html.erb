@@ -1,18 +1,5 @@
+<%= stylesheet_link_tag "form.css" %>
+
 <h1> create new category </h1>
-
-<%= form_with(model: @category) do |form| %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-
-
-    <div class="actions">
-      <%= form.submit %>
-    </div>
-  </div>
-<% end %>
+<%= render 'form', category: @category %>
+<%= link_to 'Back', products_path %>

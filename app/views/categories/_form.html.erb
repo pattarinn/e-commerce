@@ -1,21 +1,17 @@
 <%= stylesheet_link_tag "form.css" %>
+<%= form_with(model: @category) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
 
-<%= form_with(model: Category) do |form| %>
-
-  <div class="container-form">
-    <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
-
-    <div class="field">
-      <%= form.label :description %>
-      <%= form.text_field :description %>
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
 
 
-      <div class="actions">
-        <%= form.submit %>
-      </div>
+    <div class="actions">
+      <%= form.submit %>
     </div>
   </div>
 <% end %>
