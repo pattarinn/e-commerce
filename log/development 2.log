@@ -1,0 +1,362 @@
+Started GET "/" for 127.0.0.1 at 2021-04-14 15:23:22 +0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:20
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 52]]
+  ↳ app/views/products/index.html.erb:26
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 52], ["record_type", "Product"], ["name", "cover_image"], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:41
+  [1m[36mActiveStorage::Blob Load (2.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:42
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 52], ["record_type", "Product"], ["name", "images"]]
+  ↳ app/views/products/index.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:47
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:47
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:47
+  Rendered products/index.html.erb within layouts/application (Duration: 162.0ms | Allocations: 57098)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 210.9ms | Allocations: 66527)
+Completed 200 OK in 270ms (Views: 211.8ms | ActiveRecord: 8.9ms | Allocations: 75147)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1d7abb8713cb23a9cb47e4a6b9717f7ff3cb312a/andrew-spencer-VtqqOg_eHTM-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:23 +0700
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2bd4e84d54e33a6e984a88b8e4de550f82a4d94b/andrew-spencer-QuJzEMPV_Ek-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:23 +0700
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1d7abb8713cb23a9cb47e4a6b9717f7ff3cb312a", "filename"=>"andrew-spencer-VtqqOg_eHTM-unsplash"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--02c157c22f74a8496ebcd77728c4f445c2c93907/gantas-vaiciulenas-jfhIwpFYSBQ-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:23 +0700
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--270cb41385ea33b4c5fb44918ed5e36ad5c85397/jan-kopriva-vdu5ms8Snec-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:23 +0700
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2bd4e84d54e33a6e984a88b8e4de550f82a4d94b", "filename"=>"andrew-spencer-QuJzEMPV_Ek-unsplash"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--270cb41385ea33b4c5fb44918ed5e36ad5c85397", "filename"=>"jan-kopriva-vdu5ms8Snec-unsplash"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--02c157c22f74a8496ebcd77728c4f445c2c93907", "filename"=>"gantas-vaiciulenas-jfhIwpFYSBQ-unsplash"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[36m  Disk Storage (60.1ms) [0m[34mGenerated URL for file at key: 44icef16cvipd1i57ymejufp5n3w (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORFJwWTJWbU1UWmpkbWx3WkRGcE5UZDViV1ZxZFdad05XNHpkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVlowY1hGUFoxOWxTRlJOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFZuUnhjVTluWDJWSVZFMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6Mjg6MjMuMTAxWiIsInB1ciI6ImJsb2Jfa2V5In19--dba98b3958dfeabb535ac318727dca927875cb86/andrew-spencer-VtqqOg_eHTM-unsplash.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORFJwWTJWbU1UWmpkbWx3WkRGcE5UZDViV1ZxZFdad05XNHpkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVlowY1hGUFoxOWxTRlJOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFZuUnhjVTluWDJWSVZFMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6Mjg6MjMuMTAxWiIsInB1ciI6ImJsb2Jfa2V5In19--dba98b3958dfeabb535ac318727dca927875cb86/andrew-spencer-VtqqOg_eHTM-unsplash.jpg
+Completed 302 Found in 70ms (ActiveRecord: 0.2ms | Allocations: 18358)
+
+
+[36m  Disk Storage (59.5ms) [0m[34mGenerated URL for file at key: vokulbsjrticedxefqgtuum79geo (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbTlyZFd4aWMycHlkR2xqWldSNFpXWnhaM1IxZFcwM09XZGxid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVkYxU25wRlRWQldYMFZyTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFVYVktla1ZOVUZaZlJXc3RkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6Mjg6MjMuMTEwWiIsInB1ciI6ImJsb2Jfa2V5In19--e11d8c811a457ad5a3b0c32192eb249a8cf83a5e/andrew-spencer-QuJzEMPV_Ek-unsplash.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbTlyZFd4aWMycHlkR2xqWldSNFpXWnhaM1IxZFcwM09XZGxid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVkYxU25wRlRWQldYMFZyTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFVYVktla1ZOVUZaZlJXc3RkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6Mjg6MjMuMTEwWiIsInB1ciI6ImJsb2Jfa2V5In19--e11d8c811a457ad5a3b0c32192eb249a8cf83a5e/andrew-spencer-QuJzEMPV_Ek-unsplash.jpg
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORFJwWTJWbU1UWmpkbWx3WkRGcE5UZDViV1ZxZFdad05XNHpkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVlowY1hGUFoxOWxTRlJOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFZuUnhjVTluWDJWSVZFMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6Mjg6MjMuMTAxWiIsInB1ciI6ImJsb2Jfa2V5In19--dba98b3958dfeabb535ac318727dca927875cb86/andrew-spencer-VtqqOg_eHTM-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:23 +0700
+Completed 302 Found in 69ms (ActiveRecord: 0.6ms | Allocations: 17416)
+
+
+[36m  Disk Storage (55.5ms) [0m[34mGenerated URL for file at key: 4oh434ts8uaykoa5xo3r56x8ettg (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORzlvTkRNMGRITTRkV0Y1YTI5aE5YaHZNM0kxTm5nNFpYUjBad1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1waGJpMXJiM0J5YVhaaExYWmtkVFZ0Y3poVGJtVmpMWFZ1YzNCc1lYTm9MbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFtRnVMV3R2Y0hKcGRtRXRkbVIxTlcxek9GTnVaV010ZFc1emNHeGhjMmd1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTA0LTE0VDA4OjI4OjIzLjEyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--391b96be4fae2975650ebb550c437a2da6865699/jan-kopriva-vdu5ms8Snec-unsplash.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORzlvTkRNMGRITTRkV0Y1YTI5aE5YaHZNM0kxTm5nNFpYUjBad1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1waGJpMXJiM0J5YVhaaExYWmtkVFZ0Y3poVGJtVmpMWFZ1YzNCc1lYTm9MbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFtRnVMV3R2Y0hKcGRtRXRkbVIxTlcxek9GTnVaV010ZFc1emNHeGhjMmd1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTA0LTE0VDA4OjI4OjIzLjEyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--391b96be4fae2975650ebb550c437a2da6865699/jan-kopriva-vdu5ms8Snec-unsplash.jpg
+Completed 302 Found in 73ms (ActiveRecord: 0.7ms | Allocations: 16061)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+[36m  Disk Storage (58.0ms) [0m[34mGenerated URL for file at key: wnxkv3qs3goezhhkuky6lbujub20 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkMjU0YTNZemNYTXpaMjlsZW1ob2EzVnJlVFpzWW5WcWRXSXlNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6Mjg6MjMuMTI3WiIsInB1ciI6ImJsb2Jfa2V5In19--e3c768a96b8ca2ca4910b7586bb53e1f1f3048b1/gantas-vaiciulenas-jfhIwpFYSBQ-unsplash.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkMjU0YTNZemNYTXpaMjlsZW1ob2EzVnJlVFpzWW5WcWRXSXlNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6Mjg6MjMuMTI3WiIsInB1ciI6ImJsb2Jfa2V5In19--e3c768a96b8ca2ca4910b7586bb53e1f1f3048b1/gantas-vaiciulenas-jfhIwpFYSBQ-unsplash.jpg
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"andrew-spencer-VtqqOg_eHTM-unsplash"}
+Completed 302 Found in 74ms (ActiveRecord: 1.1ms | Allocations: 16042)
+
+
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 678)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORzlvTkRNMGRITTRkV0Y1YTI5aE5YaHZNM0kxTm5nNFpYUjBad1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1waGJpMXJiM0J5YVhaaExYWmtkVFZ0Y3poVGJtVmpMWFZ1YzNCc1lYTm9MbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFtRnVMV3R2Y0hKcGRtRXRkbVIxTlcxek9GTnVaV010ZFc1emNHeGhjMmd1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTA0LTE0VDA4OjI4OjIzLjEyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--391b96be4fae2975650ebb550c437a2da6865699/jan-kopriva-vdu5ms8Snec-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:23 +0700
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbTlyZFd4aWMycHlkR2xqWldSNFpXWnhaM1IxZFcwM09XZGxid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVkYxU25wRlRWQldYMFZyTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFVYVktla1ZOVUZaZlJXc3RkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6Mjg6MjMuMTEwWiIsInB1ciI6ImJsb2Jfa2V5In19--e11d8c811a457ad5a3b0c32192eb249a8cf83a5e/andrew-spencer-QuJzEMPV_Ek-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:23 +0700
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkMjU0YTNZemNYTXpaMjlsZW1ob2EzVnJlVFpzWW5WcWRXSXlNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6Mjg6MjMuMTI3WiIsInB1ciI6ImJsb2Jfa2V5In19--e3c768a96b8ca2ca4910b7586bb53e1f1f3048b1/gantas-vaiciulenas-jfhIwpFYSBQ-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:23 +0700
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"gantas-vaiciulenas-jfhIwpFYSBQ-unsplash"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 320)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"andrew-spencer-QuJzEMPV_Ek-unsplash"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"jan-kopriva-vdu5ms8Snec-unsplash"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 584)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2021-04-14 15:23:27 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 634)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 3202)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 10131)
+Completed 200 OK in 49ms (Views: 24.9ms | ActiveRecord: 1.1ms | Allocations: 17197)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORFJwWTJWbU1UWmpkbWx3WkRGcE5UZDViV1ZxZFdad05XNHpkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVlowY1hGUFoxOWxTRlJOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFZuUnhjVTluWDJWSVZFMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6Mjg6MjMuMTAxWiIsInB1ciI6ImJsb2Jfa2V5In19--dba98b3958dfeabb535ac318727dca927875cb86/andrew-spencer-VtqqOg_eHTM-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:27 +0700
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbTlyZFd4aWMycHlkR2xqWldSNFpXWnhaM1IxZFcwM09XZGxid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVkYxU25wRlRWQldYMFZyTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFVYVktla1ZOVUZaZlJXc3RkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6Mjg6MjMuMTEwWiIsInB1ciI6ImJsb2Jfa2V5In19--e11d8c811a457ad5a3b0c32192eb249a8cf83a5e/andrew-spencer-QuJzEMPV_Ek-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:27 +0700
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORzlvTkRNMGRITTRkV0Y1YTI5aE5YaHZNM0kxTm5nNFpYUjBad1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1waGJpMXJiM0J5YVhaaExYWmtkVFZ0Y3poVGJtVmpMWFZ1YzNCc1lYTm9MbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFtRnVMV3R2Y0hKcGRtRXRkbVIxTlcxek9GTnVaV010ZFc1emNHeGhjMmd1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTA0LTE0VDA4OjI4OjIzLjEyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--391b96be4fae2975650ebb550c437a2da6865699/jan-kopriva-vdu5ms8Snec-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:27 +0700
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkMjU0YTNZemNYTXpaMjlsZW1ob2EzVnJlVFpzWW5WcWRXSXlNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6Mjg6MjMuMTI3WiIsInB1ciI6ImJsb2Jfa2V5In19--e3c768a96b8ca2ca4910b7586bb53e1f1f3048b1/gantas-vaiciulenas-jfhIwpFYSBQ-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:27 +0700
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"andrew-spencer-QuJzEMPV_Ek-unsplash"}
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"andrew-spencer-VtqqOg_eHTM-unsplash"}
+Processing by ActiveStorage::DiskController#show as JPEG
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 608)
+
+
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"jan-kopriva-vdu5ms8Snec-unsplash"}
+Processing by ActiveStorage::DiskController#show as JPEG
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 790)
+
+
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 353)
+
+
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"gantas-vaiciulenas-jfhIwpFYSBQ-unsplash"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 341)
+
+
+Started POST "/admins/sign_in" for 127.0.0.1 at 2021-04-14 15:23:45 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@m.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "admin@m.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 234ms (ActiveRecord: 1.1ms | Allocations: 4710)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-14 15:23:45 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:20
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 52]]
+  ↳ app/views/products/index.html.erb:26
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 52], ["record_type", "Product"], ["name", "cover_image"], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:41
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:42
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 52], ["record_type", "Product"], ["name", "images"]]
+  ↳ app/views/products/index.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:47
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:47
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:47
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:52
+  Rendered products/index.html.erb within layouts/application (Duration: 30.2ms | Allocations: 9453)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 16269)
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 2.6ms | Allocations: 16811)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORFJwWTJWbU1UWmpkbWx3WkRGcE5UZDViV1ZxZFdad05XNHpkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVlowY1hGUFoxOWxTRlJOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFZuUnhjVTluWDJWSVZFMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6Mjg6MjMuMTAxWiIsInB1ciI6ImJsb2Jfa2V5In19--dba98b3958dfeabb535ac318727dca927875cb86/andrew-spencer-VtqqOg_eHTM-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:45 +0700
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbTlyZFd4aWMycHlkR2xqWldSNFpXWnhaM1IxZFcwM09XZGxid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVkYxU25wRlRWQldYMFZyTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFVYVktla1ZOVUZaZlJXc3RkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6Mjg6MjMuMTEwWiIsInB1ciI6ImJsb2Jfa2V5In19--e11d8c811a457ad5a3b0c32192eb249a8cf83a5e/andrew-spencer-QuJzEMPV_Ek-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:45 +0700
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"andrew-spencer-VtqqOg_eHTM-unsplash"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"andrew-spencer-QuJzEMPV_Ek-unsplash"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 343)
+
+
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 578)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkMjU0YTNZemNYTXpaMjlsZW1ob2EzVnJlVFpzWW5WcWRXSXlNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6Mjg6MjMuMTI3WiIsInB1ciI6ImJsb2Jfa2V5In19--e3c768a96b8ca2ca4910b7586bb53e1f1f3048b1/gantas-vaiciulenas-jfhIwpFYSBQ-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:45 +0700
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORzlvTkRNMGRITTRkV0Y1YTI5aE5YaHZNM0kxTm5nNFpYUjBad1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1waGJpMXJiM0J5YVhaaExYWmtkVFZ0Y3poVGJtVmpMWFZ1YzNCc1lYTm9MbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFtRnVMV3R2Y0hKcGRtRXRkbVIxTlcxek9GTnVaV010ZFc1emNHeGhjMmd1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTA0LTE0VDA4OjI4OjIzLjEyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--391b96be4fae2975650ebb550c437a2da6865699/jan-kopriva-vdu5ms8Snec-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:23:45 +0700
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"gantas-vaiciulenas-jfhIwpFYSBQ-unsplash"}
+Processing by ActiveStorage::DiskController#show as JPEG
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 329)
+
+
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"jan-kopriva-vdu5ms8Snec-unsplash"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 336)
+
+
+Started GET "/products/52/edit" for 127.0.0.1 at 2021-04-14 15:36:52 +0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"52"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "categories"."id" FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 52]]
+  ↳ app/views/products/_form.html.erb:36
+  Rendered products/_form.html.erb (Duration: 38.1ms | Allocations: 7476)
+  Rendered products/edit.html.erb within layouts/application (Duration: 40.0ms | Allocations: 7974)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 54.8ms | Allocations: 14711)
+Completed 200 OK in 68ms (Views: 53.8ms | ActiveRecord: 4.3ms | Allocations: 18631)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1d7abb8713cb23a9cb47e4a6b9717f7ff3cb312a/andrew-spencer-VtqqOg_eHTM-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:36:52 +0700
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2bd4e84d54e33a6e984a88b8e4de550f82a4d94b/andrew-spencer-QuJzEMPV_Ek-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:36:52 +0700
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--02c157c22f74a8496ebcd77728c4f445c2c93907/gantas-vaiciulenas-jfhIwpFYSBQ-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:36:52 +0700
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--270cb41385ea33b4c5fb44918ed5e36ad5c85397/jan-kopriva-vdu5ms8Snec-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:36:52 +0700
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1d7abb8713cb23a9cb47e4a6b9717f7ff3cb312a", "filename"=>"andrew-spencer-VtqqOg_eHTM-unsplash"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2bd4e84d54e33a6e984a88b8e4de550f82a4d94b", "filename"=>"andrew-spencer-QuJzEMPV_Ek-unsplash"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--270cb41385ea33b4c5fb44918ed5e36ad5c85397", "filename"=>"jan-kopriva-vdu5ms8Snec-unsplash"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: 44icef16cvipd1i57ymejufp5n3w (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORFJwWTJWbU1UWmpkbWx3WkRGcE5UZDViV1ZxZFdad05XNHpkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVlowY1hGUFoxOWxTRlJOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFZuUnhjVTluWDJWSVZFMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6NDE6NTIuMTU3WiIsInB1ciI6ImJsb2Jfa2V5In19--d538097d2d8c5c56ed558f0649c3e0b56d27bb4b/andrew-spencer-VtqqOg_eHTM-unsplash.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORFJwWTJWbU1UWmpkbWx3WkRGcE5UZDViV1ZxZFdad05XNHpkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVlowY1hGUFoxOWxTRlJOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFZuUnhjVTluWDJWSVZFMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6NDE6NTIuMTU3WiIsInB1ciI6ImJsb2Jfa2V5In19--d538097d2d8c5c56ed558f0649c3e0b56d27bb4b/andrew-spencer-VtqqOg_eHTM-unsplash.jpg
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--02c157c22f74a8496ebcd77728c4f445c2c93907", "filename"=>"gantas-vaiciulenas-jfhIwpFYSBQ-unsplash"}
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: vokulbsjrticedxefqgtuum79geo (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbTlyZFd4aWMycHlkR2xqWldSNFpXWnhaM1IxZFcwM09XZGxid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVkYxU25wRlRWQldYMFZyTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFVYVktla1ZOVUZaZlJXc3RkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6NDE6NTIuMTYyWiIsInB1ciI6ImJsb2Jfa2V5In19--03deab4997711c6abe434f193ed0bdacee8bb305/andrew-spencer-QuJzEMPV_Ek-unsplash.jpg)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbTlyZFd4aWMycHlkR2xqWldSNFpXWnhaM1IxZFcwM09XZGxid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVkYxU25wRlRWQldYMFZyTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFVYVktla1ZOVUZaZlJXc3RkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6NDE6NTIuMTYyWiIsInB1ciI6ImJsb2Jfa2V5In19--03deab4997711c6abe434f193ed0bdacee8bb305/andrew-spencer-QuJzEMPV_Ek-unsplash.jpg
+Completed 302 Found in 13ms (ActiveRecord: 0.5ms | Allocations: 6859)
+
+
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: wnxkv3qs3goezhhkuky6lbujub20 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkMjU0YTNZemNYTXpaMjlsZW1ob2EzVnJlVFpzWW5WcWRXSXlNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6NDE6NTIuMTc0WiIsInB1ciI6ImJsb2Jfa2V5In19--f7494279cc33efa5f24c668c88615bc0fc047302/gantas-vaiciulenas-jfhIwpFYSBQ-unsplash.jpg)[0m
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: 4oh434ts8uaykoa5xo3r56x8ettg (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORzlvTkRNMGRITTRkV0Y1YTI5aE5YaHZNM0kxTm5nNFpYUjBad1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1waGJpMXJiM0J5YVhaaExYWmtkVFZ0Y3poVGJtVmpMWFZ1YzNCc1lYTm9MbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFtRnVMV3R2Y0hKcGRtRXRkbVIxTlcxek9GTnVaV010ZFc1emNHeGhjMmd1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTA0LTE0VDA4OjQxOjUyLjE3MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e7c4f5bad92e51df49525580e871fa0c5eaa6d89/jan-kopriva-vdu5ms8Snec-unsplash.jpg)[0m
+Completed 302 Found in 16ms (ActiveRecord: 0.5ms | Allocations: 8966)
+
+
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkMjU0YTNZemNYTXpaMjlsZW1ob2EzVnJlVFpzWW5WcWRXSXlNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6NDE6NTIuMTc0WiIsInB1ciI6ImJsb2Jfa2V5In19--f7494279cc33efa5f24c668c88615bc0fc047302/gantas-vaiciulenas-jfhIwpFYSBQ-unsplash.jpg
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORzlvTkRNMGRITTRkV0Y1YTI5aE5YaHZNM0kxTm5nNFpYUjBad1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1waGJpMXJiM0J5YVhaaExYWmtkVFZ0Y3poVGJtVmpMWFZ1YzNCc1lYTm9MbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFtRnVMV3R2Y0hKcGRtRXRkbVIxTlcxek9GTnVaV010ZFc1emNHeGhjMmd1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTA0LTE0VDA4OjQxOjUyLjE3MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e7c4f5bad92e51df49525580e871fa0c5eaa6d89/jan-kopriva-vdu5ms8Snec-unsplash.jpg
+Completed 302 Found in 12ms (ActiveRecord: 0.7ms | Allocations: 6347)
+
+
+Completed 302 Found in 16ms (ActiveRecord: 0.6ms | Allocations: 8023)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbTlyZFd4aWMycHlkR2xqWldSNFpXWnhaM1IxZFcwM09XZGxid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVkYxU25wRlRWQldYMFZyTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFVYVktla1ZOVUZaZlJXc3RkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6NDE6NTIuMTYyWiIsInB1ciI6ImJsb2Jfa2V5In19--03deab4997711c6abe434f193ed0bdacee8bb305/andrew-spencer-QuJzEMPV_Ek-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:36:52 +0700
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORFJwWTJWbU1UWmpkbWx3WkRGcE5UZDViV1ZxZFdad05XNHpkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVlowY1hGUFoxOWxTRlJOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFZuUnhjVTluWDJWSVZFMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6NDE6NTIuMTU3WiIsInB1ciI6ImJsb2Jfa2V5In19--d538097d2d8c5c56ed558f0649c3e0b56d27bb4b/andrew-spencer-VtqqOg_eHTM-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:36:52 +0700
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"andrew-spencer-VtqqOg_eHTM-unsplash"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"andrew-spencer-QuJzEMPV_Ek-unsplash"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 324)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkMjU0YTNZemNYTXpaMjlsZW1ob2EzVnJlVFpzWW5WcWRXSXlNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDg6NDE6NTIuMTc0WiIsInB1ciI6ImJsb2Jfa2V5In19--f7494279cc33efa5f24c668c88615bc0fc047302/gantas-vaiciulenas-jfhIwpFYSBQ-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:36:52 +0700
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"gantas-vaiciulenas-jfhIwpFYSBQ-unsplash"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 341)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORzlvTkRNMGRITTRkV0Y1YTI5aE5YaHZNM0kxTm5nNFpYUjBad1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1waGJpMXJiM0J5YVhaaExYWmtkVFZ0Y3poVGJtVmpMWFZ1YzNCc1lYTm9MbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFtRnVMV3R2Y0hKcGRtRXRkbVIxTlcxek9GTnVaV010ZFc1emNHeGhjMmd1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTA0LTE0VDA4OjQxOjUyLjE3MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--e7c4f5bad92e51df49525580e871fa0c5eaa6d89/jan-kopriva-vdu5ms8Snec-unsplash.jpg" for 127.0.0.1 at 2021-04-14 15:36:52 +0700
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"jan-kopriva-vdu5ms8Snec-unsplash"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 495)
+
+
+Started GET "/products" for 127.0.0.1 at 2021-04-14 16:13:03 +0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/products/index.html.erb:20
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/products/index.html.erb:20
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "product_categories" ON "categories"."id" = "product_categories"."category_id" WHERE "product_categories"."product_id" = ?[0m  [["product_id", 52]]
+  ↳ app/views/products/index.html.erb:26
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 52], ["record_type", "Product"], ["name", "cover_image"], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:41
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:42
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ?[0m  [["record_id", 52], ["record_type", "Product"], ["name", "images"]]
+  ↳ app/views/products/index.html.erb:46
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:47
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:47
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:47
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:52
+  Rendered products/index.html.erb within layouts/application (Duration: 45.2ms | Allocations: 10795)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 57.1ms | Allocations: 17608)
+Completed 200 OK in 58ms (Views: 57.5ms | ActiveRecord: 5.6ms | Allocations: 18147)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1d7abb8713cb23a9cb47e4a6b9717f7ff3cb312a/andrew-spencer-VtqqOg_eHTM-unsplash.jpg" for 127.0.0.1 at 2021-04-14 16:13:03 +0700
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2bd4e84d54e33a6e984a88b8e4de550f82a4d94b/andrew-spencer-QuJzEMPV_Ek-unsplash.jpg" for 127.0.0.1 at 2021-04-14 16:13:03 +0700
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1d7abb8713cb23a9cb47e4a6b9717f7ff3cb312a", "filename"=>"andrew-spencer-VtqqOg_eHTM-unsplash"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--270cb41385ea33b4c5fb44918ed5e36ad5c85397/jan-kopriva-vdu5ms8Snec-unsplash.jpg" for 127.0.0.1 at 2021-04-14 16:13:03 +0700
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--02c157c22f74a8496ebcd77728c4f445c2c93907/gantas-vaiciulenas-jfhIwpFYSBQ-unsplash.jpg" for 127.0.0.1 at 2021-04-14 16:13:03 +0700
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: 44icef16cvipd1i57ymejufp5n3w (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORFJwWTJWbU1UWmpkbWx3WkRGcE5UZDViV1ZxZFdad05XNHpkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVlowY1hGUFoxOWxTRlJOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFZuUnhjVTluWDJWSVZFMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDk6MTg6MDMuNTcyWiIsInB1ciI6ImJsb2Jfa2V5In19--a6f31bb981a2c30c0c9f62c7b16e50517504f900/andrew-spencer-VtqqOg_eHTM-unsplash.jpg)[0m
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2bd4e84d54e33a6e984a88b8e4de550f82a4d94b", "filename"=>"andrew-spencer-QuJzEMPV_Ek-unsplash"}
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORFJwWTJWbU1UWmpkbWx3WkRGcE5UZDViV1ZxZFdad05XNHpkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVlowY1hGUFoxOWxTRlJOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFZuUnhjVTluWDJWSVZFMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDk6MTg6MDMuNTcyWiIsInB1ciI6ImJsb2Jfa2V5In19--a6f31bb981a2c30c0c9f62c7b16e50517504f900/andrew-spencer-VtqqOg_eHTM-unsplash.jpg
+Completed 302 Found in 10ms (ActiveRecord: 0.1ms | Allocations: 4323)
+
+
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--270cb41385ea33b4c5fb44918ed5e36ad5c85397", "filename"=>"jan-kopriva-vdu5ms8Snec-unsplash"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: vokulbsjrticedxefqgtuum79geo (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbTlyZFd4aWMycHlkR2xqWldSNFpXWnhaM1IxZFcwM09XZGxid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVkYxU25wRlRWQldYMFZyTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFVYVktla1ZOVUZaZlJXc3RkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDk6MTg6MDMuNTg2WiIsInB1ciI6ImJsb2Jfa2V5In19--940844d30594d9c5f0c1c2d9622fea8d65659ee7/andrew-spencer-QuJzEMPV_Ek-unsplash.jpg)[0m
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--02c157c22f74a8496ebcd77728c4f445c2c93907", "filename"=>"gantas-vaiciulenas-jfhIwpFYSBQ-unsplash"}
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbTlyZFd4aWMycHlkR2xqWldSNFpXWnhaM1IxZFcwM09XZGxid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVkYxU25wRlRWQldYMFZyTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFVYVktla1ZOVUZaZlJXc3RkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDk6MTg6MDMuNTg2WiIsInB1ciI6ImJsb2Jfa2V5In19--940844d30594d9c5f0c1c2d9622fea8d65659ee7/andrew-spencer-QuJzEMPV_Ek-unsplash.jpg
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: 4oh434ts8uaykoa5xo3r56x8ettg (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORzlvTkRNMGRITTRkV0Y1YTI5aE5YaHZNM0kxTm5nNFpYUjBad1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1waGJpMXJiM0J5YVhaaExYWmtkVFZ0Y3poVGJtVmpMWFZ1YzNCc1lYTm9MbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFtRnVMV3R2Y0hKcGRtRXRkbVIxTlcxek9GTnVaV010ZFc1emNHeGhjMmd1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTA0LTE0VDA5OjE4OjAzLjU5MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--298c5a0f9dd27c45dd56a98509eb8912d67e0a66/jan-kopriva-vdu5ms8Snec-unsplash.jpg)[0m
+Completed 302 Found in 19ms (ActiveRecord: 0.9ms | Allocations: 7806)
+
+
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORzlvTkRNMGRITTRkV0Y1YTI5aE5YaHZNM0kxTm5nNFpYUjBad1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1waGJpMXJiM0J5YVhaaExYWmtkVFZ0Y3poVGJtVmpMWFZ1YzNCc1lYTm9MbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFtRnVMV3R2Y0hKcGRtRXRkbVIxTlcxek9GTnVaV010ZFc1emNHeGhjMmd1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTA0LTE0VDA5OjE4OjAzLjU5MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--298c5a0f9dd27c45dd56a98509eb8912d67e0a66/jan-kopriva-vdu5ms8Snec-unsplash.jpg
+Completed 302 Found in 21ms (ActiveRecord: 0.8ms | Allocations: 9747)
+
+
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: wnxkv3qs3goezhhkuky6lbujub20 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkMjU0YTNZemNYTXpaMjlsZW1ob2EzVnJlVFpzWW5WcWRXSXlNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDk6MTg6MDMuNjAwWiIsInB1ciI6ImJsb2Jfa2V5In19--ba5db8628c3591140c4a241c719e591039b61390/gantas-vaiciulenas-jfhIwpFYSBQ-unsplash.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkMjU0YTNZemNYTXpaMjlsZW1ob2EzVnJlVFpzWW5WcWRXSXlNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDk6MTg6MDMuNjAwWiIsInB1ciI6ImJsb2Jfa2V5In19--ba5db8628c3591140c4a241c719e591039b61390/gantas-vaiciulenas-jfhIwpFYSBQ-unsplash.jpg
+Completed 302 Found in 11ms (ActiveRecord: 0.6ms | Allocations: 6302)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORFJwWTJWbU1UWmpkbWx3WkRGcE5UZDViV1ZxZFdad05XNHpkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVlowY1hGUFoxOWxTRlJOTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFZuUnhjVTluWDJWSVZFMHRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDk6MTg6MDMuNTcyWiIsInB1ciI6ImJsb2Jfa2V5In19--a6f31bb981a2c30c0c9f62c7b16e50517504f900/andrew-spencer-VtqqOg_eHTM-unsplash.jpg" for 127.0.0.1 at 2021-04-14 16:13:03 +0700
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbTlyZFd4aWMycHlkR2xqWldSNFpXWnhaM1IxZFcwM09XZGxid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1GdVpISmxkeTF6Y0dWdVkyVnlMVkYxU25wRlRWQldYMFZyTFhWdWMzQnNZWE5vTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZVzVrY21WM0xYTndaVzVqWlhJdFVYVktla1ZOVUZaZlJXc3RkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDk6MTg6MDMuNTg2WiIsInB1ciI6ImJsb2Jfa2V5In19--940844d30594d9c5f0c1c2d9622fea8d65659ee7/andrew-spencer-QuJzEMPV_Ek-unsplash.jpg" for 127.0.0.1 at 2021-04-14 16:13:03 +0700
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"andrew-spencer-VtqqOg_eHTM-unsplash"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORzlvTkRNMGRITTRkV0Y1YTI5aE5YaHZNM0kxTm5nNFpYUjBad1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1waGJpMXJiM0J5YVhaaExYWmtkVFZ0Y3poVGJtVmpMWFZ1YzNCc1lYTm9MbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFtRnVMV3R2Y0hKcGRtRXRkbVIxTlcxek9GTnVaV010ZFc1emNHeGhjMmd1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIxLTA0LTE0VDA5OjE4OjAzLjU5MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--298c5a0f9dd27c45dd56a98509eb8912d67e0a66/jan-kopriva-vdu5ms8Snec-unsplash.jpg" for 127.0.0.1 at 2021-04-14 16:13:03 +0700
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"andrew-spencer-QuJzEMPV_Ek-unsplash"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 409)
+
+
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 747)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"jan-kopriva-vdu5ms8Snec-unsplash"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 332)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkMjU0YTNZemNYTXpaMjlsZW1ob2EzVnJlVFpzWW5WcWRXSXlNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkbllXNTBZWE10ZG1GcFkybDFiR1Z1WVhNdGFtWm9TWGR3UmxsVFFsRXRkVzV6Y0d4aGMyZ3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjEtMDQtMTRUMDk6MTg6MDMuNjAwWiIsInB1ciI6ImJsb2Jfa2V5In19--ba5db8628c3591140c4a241c719e591039b61390/gantas-vaiciulenas-jfhIwpFYSBQ-unsplash.jpg" for 127.0.0.1 at 2021-04-14 16:13:03 +0700
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"gantas-vaiciulenas-jfhIwpFYSBQ-unsplash"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 328)
+
+
