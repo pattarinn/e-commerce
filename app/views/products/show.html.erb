@@ -3,38 +3,81 @@
 <p id="notice"><%= notice %></p>
 
 <body>
-<div class="title">Title: <%= @product.title %></div>
-<div class="description">Description: <%= @product.description %></div>
-<div class="status">Status: <%= @product.status %></div>
-<div class="category">Category:
-  <% if @product.categories.present? %>
-    <% @product.categories.each do |category| %>
-      <%= link_to "#{category.name}", category_path(category) %>
-    <% end %>
-  <% else %>
-    <div>
-      NA
+<div class="title"><%= @product.title %></div>
+
+<div class="content">
+  <div class="pic">
+    <div class="cover-image">
+      <% if @product.cover_image.attached? %>
+        <%= image_tag @product.cover_image %>
+      <% end %>
     </div>
-  <% end %>
-</div>
-<div class="stock">Stock: <%= @product.stock %></div>
-<div class="price">Price: <%= @product.price %></div>
-<div>
-  <strong>Cover image</strong>
-  <% if @product.cover_image.attached? %>
-    <%= image_tag @product.cover_image, width: '200px' %>
-  <% end %>
+    <div class="images">
+<!--      <strong>Images</strong>-->
+      <% if @product.images.attached? %>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <% for i in 0..@product.images.count %>
+              <% if i == 0 %>
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <% else %>
+                <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>"></li>
+              <% end %>
+            <% end %>
+          </ol>
+
+          <div class="carousel-inner">
+            <% @product.images.each_with_index do |image, index| %>
+              <% if index == 0 %>
+                <div class="carousel-item active" id="product-images">
+                  <%= image_tag(image) %>
+                </div>
+              <% else %>
+                <div class="carousel-item" id="produc-images">
+                  <%= image_tag(image) %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+      <div class="product-info">
+        <div class="description">Description: <%= @product.description %></div>
+        <div class="status">Status: <%= @product.status %></div>
+        <div class="category">Category:
+          <% if @product.categories.present? %>
+            <% @product.categories.each do |category| %>
+              <%= link_to "#{category.name}", category_path(category) %>
+            <% end %>
+          <% else %>
+            <div>
+              NA
+            </div>
+          <% end %>
+        </div>
+        <div class="stock">Stock: <%= @product.stock %></div>
+        <div class="price">Price: <%= @product.price %></div>
+        <div>
+        </div>
+      </div>
 </div>
 
-<div>
-  <strong>Images</strong>
-  <% if @product.images.attached? %>
-    <% @product.images.each do |image| %>
-      <%= image_tag image, height: '200px' %>
-    <% end %>
-  <% end %>
-</div>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+    <div class="menu">
+      <%= link_to 'Edit', edit_product_path(@product) %> |
+      <%= link_to 'Back', products_path %>
+    </div>
+
 </body>
