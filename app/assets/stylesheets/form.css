@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+body{
+    background-color: #9ddfd3;
+    margin: 20px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.container-form {
+    background-color: white;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-form > .actions {
+    margin-top: 20px;
+}
+
+#images-form {
+    display: flex;
+    flex-direction: column;
+}
+#images-form > img {
+    max-height: 100%;
+    width: 100px;
+}

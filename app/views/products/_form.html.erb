@@ -1,68 +1,70 @@
+<%= stylesheet_link_tag "form.css" %>
+
 <%= form_with(model: product) do |form| %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+  <div class="container-form">
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
 
-  <div class="field">
-    <%= form.label :stock %>
-    <%= form.number_field :stock %>
-  </div>
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_field :description %>
+    </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-  </div>
+    <div class="field">
+      <%= form.label :stock %>
+      <%= form.number_field :stock %>
+    </div>
 
-  <div>
-    <label for="category">Choose category</label>
-    <%= form.collection_check_boxes :category_ids, Category.all, :id, :name %>
-  </div>
+    <div class="field">
+      <%= form.label :price %>
+      <%= form.number_field :price %>
+    </div>
 
-  <div>
-    <label for="status">Status</label>
-    <%= form.select(:status, options_for_select(Product.statuses.keys, :selected => @product.status)) %>
-  </div>
-
-  <div>
-    <label for="cover_image">Choose cover image</label>
-    <%= form.file_field :cover_image %>
     <div>
+      <label for="category">Choose category</label>
+      <%= form.collection_check_boxes :category_ids, Category.all, :id, :name %>
+    </div>
+
+    <div>
+      <label for="status">Status</label>
+      <%= form.select(:status, options_for_select(Product.statuses.keys, :selected => @product.status)) %>
+    </div>
+
+    <div>
+      <label for="cover_image">Choose cover image</label>
+      <%= form.file_field :cover_image %>
       <% if @product.cover_image.attached? %>
-        <%= image_tag @product.cover_image, height: '200px' %>
         <div>
-          <%= link_to 'Remove', remove_image_attachment_product_url(@product.cover_image.id), method: :delete,
-                      data: { confirm: 'Are you sure?'}%>
-        </div>
+        <%= image_tag(@product.cover_image, height: '200px') %>
+        <%= link_to 'Remove', remove_image_attachment_product_url(@product.cover_image.id), method: :delete,
+                      data: { confirm: 'Are you sure?' } %>
       <% end %>
+      </div>
     </div>
-  </div>
 
 
-  <br>
+    <br>
 
-  <div>
-    <label for="images">Choose images</label>
-    <%= form.file_field :images, multiple: true %>
     <div>
-      <% if @product.images.attached? %>
-        <% @product.images.each do |image| %>
-          <%= image_tag image, height: '200px' %>
-          <%= link_to 'Remove', remove_image_attachment_product_url(image.id), method: :delete,
-                      data: { confirm: 'Are you sure?'}%>
-          <br>
+      <label for="images">Choose images</label>
+      <%= form.file_field :images, multiple: true %>
+      <div id="images-form">
+        <% if @product.images.attached? %>
+          <% @product.images.each do |image| %>
+            <%= image_tag image, height: '200px' %>
+            <%= link_to 'Remove', remove_image_attachment_product_url(image.id), method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+            <br>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>
