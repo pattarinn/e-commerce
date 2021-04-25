@@ -1,0 +1,32 @@
+<h1>Order Detail</h1>
+<p id="notice"><%= notice %></p>
+<div class="container-form">
+  <p>
+    <strong>Product Name:</strong>
+    <%= @order.product_name %>
+  </p>
+  <p>
+    <strong>Amount:</strong>
+    <%= @order.amount %>
+  </p>
+  <p>
+    <strong>Customer Name:</strong>
+    <%= @order.customer_name %>
+  </p>
+
+  <p>
+    <strong>Customer Address:</strong>
+    <%= @order.address %>
+  </p>
+
+
+</div>
+
+<div>
+  <%= link_to 'back to homepage', products_path %>
+</div>
+<div>
+  <% if admin_signed_in? %>
+    <%= link_to 'all orders', orders_path %>
+  <% end %>
+</div>

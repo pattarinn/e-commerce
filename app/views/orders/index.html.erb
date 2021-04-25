@@ -1,0 +1,38 @@
+
+<div class="row-mt-2">
+  <div class="col">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">Order Id</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Amount</th>
+      </tr>
+      </thead>
+      <% @orders.each do |order| %>
+        <tbody>
+        <tr>
+          <th scope="row">
+            <%= order.id %></th>
+          <td>
+            <%= order.customer_name %></td>
+          <td>
+            <%= order.address %></td>
+          <td>
+            <%= order.product_name %></td>
+          <td>
+            <%= order.amount %></td>
+          <td>
+            <a class="" href="<%= edit_order_path(order) %>">edit</a>
+          </td>
+          <td>
+            <%= link_to('delete', order, method: :delete, data: { confirm: 'Are you sure?' })%>
+          </td>
+        </tr>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+</div>
