@@ -1,8 +1,21 @@
+<h1>id: <%= @id %></h1>
+
 <%= form_with(model: @order) do |form| %>
   <div class="field">
     <%= form.label :customer_name %>
     <%= form.text_field :customer_name %>
   </div>
+
+<!--  <div class="field">-->
+
+<!--  </div>-->
+
+<!--  <div class="field">-->
+
+<!--  </div>-->
+<!--  <div class="field">-->
+    <%#= form.hidden_field :product_id %>
+<!--  </div>-->
 
   <div class="field">
     <%= form.label :address %>
