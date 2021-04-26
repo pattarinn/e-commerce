@@ -1,8 +1,8 @@
-
-<div class="row-mt-2">
-  <div class="col">
+<%= stylesheet_link_tag 'order.css' %>
+<!--<div class="row-mt-2">-->
+<!--  <div class="col">-->
     <table class="table table-hover">
-      <thead>
+      <thead class="thead-dark">
       <tr>
         <th scope="col">Order Id</th>
         <th scope="col">Customer Name</th>
@@ -10,6 +10,8 @@
         <th scope="col">Product Name</th>
         <th scope="col">Product ID</th>
         <th scope="col">Amount</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
       </thead>
       <% @orders.each do |order| %>
@@ -37,5 +39,11 @@
         </tbody>
       <% end %>
     </table>
+<!--  </div>-->
+  <div class="paginate">
+    <%= paginate @orders %>
   </div>
-</div>
+  <div>
+    <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: "sign-out" %>
+  </div>
+<!--</div>-->
