@@ -1,16 +1,18 @@
 <%= stylesheet_link_tag "form.css" %>
 <p id="notice"><%= notice %></p>
 <div class="container-form">
-<p>
-  <strong>Category name:</strong>
-  <%= @category.name %>
-</p>
+  <p>
+    <strong>Category name:</strong>
+    <%= @category.name %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @category.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @category.description %>
+  </p>
 </div>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
+<% if admin_signed_in? %>
+  <%= link_to 'Edit', edit_category_path(@category) %> |
+<% end %>
 <%= link_to 'Back', products_path %>

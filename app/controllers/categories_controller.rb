@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, except: [:show]
 
   def new
     @category = Category.new
