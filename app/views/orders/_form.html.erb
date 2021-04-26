@@ -13,6 +13,11 @@
       <%= form.text_field :address %>
     </div>
 
+    <div class="field">
+      <%= form.label :amount %>
+      <%= form.number_field :amount %>
+    </div>
+
     <div class="actions">
       <%= form.submit %>
     </div>
@@ -24,10 +29,6 @@
 
       <div class="field">
         <%= form.text_field :product_name, value: @product.title, type: "hidden" %>
-      </div>
-
-      <div class="field">
-        <%= form.text_field :amount, value: 1, type: "hidden" %>
       </div>
     </div>
   <% end %>

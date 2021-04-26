@@ -1,5 +1,8 @@
+<% stylesheet_link_tag 'form' %>
 <h1>New Product</h1>
 
 <%= render 'form', product: @product %>
 
-<%= link_to 'Back', products_path %>
+<div style="margin: 20px">
+  <%= link_to 'Back', products_path, class: "btn btn-info" %>
+</div>
