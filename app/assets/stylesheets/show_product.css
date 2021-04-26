@@ -60,3 +60,8 @@ body {
 .menu > .btn.btn-info {
     margin: 10px;
 }
+
+.buy-now-button {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
