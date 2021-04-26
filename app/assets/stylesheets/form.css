@@ -29,3 +29,11 @@ body{
     max-height: 100%;
     width: 100px;
 }
+
+#order-show-bot-menu {
+    display: flex;
+}
+
+#order-show-bot-menu > .button{
+    margin: 20px;
+}
