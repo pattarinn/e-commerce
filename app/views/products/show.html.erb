@@ -42,6 +42,9 @@
 
       <div class="buy-now-button">
         <%= link_to('Buy Now', new_order_path(:product_id => @product.id), class: "btn btn-success") %>
+        <% if admin_signed_in? %>
+          <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-info" %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -49,10 +52,7 @@
 
 
 <div class="menu">
-  <% if admin_signed_in? %>
-    <%= link_to 'Edit', edit_product_path(@product) %> |
-  <% end %>
-  <%= link_to 'Back', products_path %>
+  <%= link_to 'Back', products_path, class: "btn btn-info" %>
 </div>
 
 </body>
