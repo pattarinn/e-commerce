@@ -1,4 +1,4 @@
-<h1>id: <%= @id %></h1>
+<h1><%= @product.title %></h1>
 
 <%= form_with(model: @order) do |form| %>
   <div class="field">
@@ -6,23 +6,26 @@
     <%= form.text_field :customer_name %>
   </div>
 
-<!--  <div class="field">-->
-
-<!--  </div>-->
-
-<!--  <div class="field">-->
-
-<!--  </div>-->
-<!--  <div class="field">-->
-    <%#= form.hidden_field :product_id %>
-<!--  </div>-->
-
   <div class="field">
     <%= form.label :address %>
     <%= form.text_field :address %>
+  </div>
 
-    <div class="actions">
-      <%= form.submit %>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+  <div class="hidden-field">
+    <div class="field">
+      <%= form.text_field :product_id, value: @product.id, type: "hidden" %>
+    </div>
+
+    <div class="field">
+      <%= form.text_field :product_name, value: @product.title, type: "hidden" %>
+    </div>
+
+    <div class="field">
+      <%= form.text_field :amount, value: 1, type: "hidden" %>
     </div>
   </div>
 <% end %>

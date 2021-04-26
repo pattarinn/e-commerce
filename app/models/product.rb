@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
-  enum status: [ :draft, :published, :archived]
+  belongs_to :order
+
+  enum status: [:draft, :published, :archived]
 
   has_many :product_categories
   has_many :categories, through: :product_categories

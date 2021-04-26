@@ -11,10 +11,12 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @product = Product.find(params["product_id"])
   end
 
   def edit
     @order = Order.find(params[:id])
+    @product = Product.find(@order.product_id)
   end
 
   def create

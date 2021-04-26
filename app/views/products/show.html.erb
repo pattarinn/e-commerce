@@ -41,7 +41,7 @@
       </div>
 
       <div class="buy-now-button">
-        <%= link_to 'Buy Now', new_order_path %>
+        <%= link_to 'Buy Now', new_order_path(:product_id => @product.id) %>
       </div>
     </div>
   </div>
