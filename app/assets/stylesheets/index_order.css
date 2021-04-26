@@ -2,8 +2,28 @@
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
+    margin: 30px;
 }
 
 th {
     font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu > .left {
+    display: flex;
+    margin: 20px;
+}
+
+.menu > .left > .b1{
+    margin: 20px;
+}
+
+.menu > .right{
+    display: flex;
+    align-content: center;
 }

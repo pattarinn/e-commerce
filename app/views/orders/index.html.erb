@@ -30,10 +30,10 @@
       <td>
         <%= order.amount %></td>
       <td>
-        <a class="" href="<%= edit_order_path(order) %>">edit</a>
+        <a class="btn btn-warning" href="<%= edit_order_path(order) %>">edit</a>
       </td>
       <td>
-        <%= link_to('delete', order, method: :delete, data: { confirm: 'Are you sure?' }) %>
+        <%= link_to('delete', order, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger") %>
       </td>
     </tr>
     </tbody>
@@ -41,11 +41,11 @@
 </table>
 <!--  </div>-->
 <div class="menu">
-  <div class="right">
-    <div><%= link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: "sign-out" %></div>
-    <div><%= link_to 'Homepage', products_path %></div>
-  </div>
   <div class="left">
+    <div class="b1"><%= link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: "btn btn-info" %></div>
+    <div class="b1"><%= link_to 'Homepage', products_path, class:"btn btn-info"%></div>
+  </div>
+  <div class="right">
     <div class="paginate"><%= paginate @orders %></div>
   </div>
 </div>
