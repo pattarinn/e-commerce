@@ -12,7 +12,8 @@
   </p>
 </div>
 
+
 <% if admin_signed_in? %>
-  <%= link_to 'Edit', edit_category_path(@category) %> |
+  <%= link_to 'Edit', edit_category_path(@category), class: "btn btn-warning" %>
 <% end %>
-<%= link_to 'Back', products_path %>
+<%= link_to 'Back', products_path, class: "btn btn-info" %>

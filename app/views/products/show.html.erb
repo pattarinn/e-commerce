@@ -43,7 +43,7 @@
       <div class="buy-now-button">
         <%= link_to('Buy Now', new_order_path(:product_id => @product.id), class: "btn btn-success") %>
         <% if admin_signed_in? %>
-          <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-info" %>
+          <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-warning" %>
         <% end %>
       </div>
     </div>
